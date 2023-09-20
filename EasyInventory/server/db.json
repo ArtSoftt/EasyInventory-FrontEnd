@@ -1,0 +1,167 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Paul",
+      "lastname": "Vega",
+      "user": "Polbored",
+      "password": "Pass1234",
+      "email": "paul@gmail.com",
+      "birthday": "25/11/2002",
+      "subscription": "free",
+      "idListProducts": 1,
+      "idListSales": 1,
+      "idListCustomers": 1,
+      "idListProviders": 1,
+      "idListShops": 1
+    }
+  ],
+  "list-customers": [
+    {
+      "id": 1,
+      "customers":[
+        {
+          "id": 1,
+          "name": "Roberto",
+          "lastname": "Perez",
+          "birthday": "25/11/1998",
+          "email": "robert@gmail.com",
+          "phone": 939383233
+        },
+        {
+          "id": 2,
+          "name": "Marco",
+          "lastname": "Collazos",
+          "birthday": "20/02/1990",
+          "email": "robert@gmail.com",
+          "phone": 943408163
+        }
+      ]
+    }
+  ],
+  "list-providers": [
+    {
+      "id": 1,
+      "providers": [
+        {
+          "id": 1,
+          "name":"Shang-In",
+          "phone":987543172,
+          "ruc": 202020202230,
+          "email": "shangin@gmail.com",
+          "city": "lima",
+          "address": "Av. Los Jardines"
+        }
+      ]
+    }
+  ],
+  "list-products": [
+    { "id": 1,
+      "products": [
+        {
+          "id": 1,
+          "name": "Transistor CP-X234",
+          "type": "Transistor",
+          "unitPrice": 20,
+          "stock": 10,
+          "dateOfPurchase": "20/07/2022"
+        },
+        {
+          "id": 2,
+          "name": "Capacitor PX-X234",
+          "type": "Capacitor",
+          "unitPrice": 5,
+          "stock": 8,
+          "dateOfPurchase": "30/06/2023"
+        },
+        {
+          "id": 3,
+          "name": "Resistance CP-X234",
+          "type": "Resistance",
+          "unitPrice": 15,
+          "stock": 5,
+          "dateOfPurchase": "25/05/2023"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "products": [
+        {
+          "id": 1,
+          "name": "Transistor CP-X33",
+          "type": "Transistor",
+          "unitPrice": 20,
+          "stock": 10,
+          "dateOfPurchase": "20/07/2022"
+        },
+        {
+          "id": 2,
+          "name": "Transistor CP-X44",
+          "type": "Transistor",
+          "unitPrice": 20,
+          "stock": 10,
+          "dateOfPurchase": "20/07/2022"
+        },
+        {
+          "id": 3,
+          "name": "Transistor CP-X555",
+          "type": "Transistor",
+          "unitPrice": 20,
+          "stock": 10,
+          "dateOfPurchase": "20/07/2022"
+        },
+        {
+          "id": 4,
+          "name": "Transistor P3454",
+          "type": "Transistor",
+          "unitPrice": 20,
+          "stock": 10,
+          "dateOfPurchase": "20/07/2022"
+        }
+      ]
+    }
+  ],
+  "list-sales": [
+    {
+      "id": 1,
+      "sales": [
+        {
+          "id": 1,
+          "customer-id": 1,
+          "Date": "25/09/2023",
+          "Total Cost": 70,
+          "listOfProducts": [
+            {
+              "id": 1,
+              "quantity": 5,
+              "Discount": 50,
+              "totalCost": 50
+            },
+            {
+              "id": 2,
+              "quantity": 5,
+              "Discount": 5,
+              "totalCost":20
+            }
+          ]
+        }
+      ]
+    }
+
+  ],
+  "list-shops": [
+    {
+      "id": 1,
+      "shops": [
+        {
+          "id": 1,
+          "amount": 20,
+          "idProduct": 2,
+          "unitPrice":2.50,
+          "idProvider":1
+        }
+      ]
+    }
+  ]
+}
