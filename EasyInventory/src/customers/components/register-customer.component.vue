@@ -58,14 +58,6 @@
               </div>
             </div>
           </div>
-          <div class="field col">
-            <div class="form-group-inline">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="email" v-model="customer.email" required/>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="form grid grid">
@@ -99,7 +91,7 @@
 
         <div class="form grid grid ">
           <div class="field col">
-            <pv-button @click="submitForm ">Submit</pv-button>
+            <pv-button @click="handleClick">Submit</pv-button>
           </div>
 
           <div class="field col">
@@ -160,6 +152,20 @@ export default {
         address: this.address,
       })
     },
+    onCustomerRegistered(customer){
+      this.id=customer.id;
+      this.name=customer.name;
+      this.lastName=customer.lastName;
+      this.birthdate=customer.birthdate;
+      this.email=customer.email;
+      this.phone=customer.phone;
+      this.address=customer.address;
+      console.log("Customer registered: ", customer);
+    },
+    handleClick(){
+      this.submitForm();
+      this.onCustomerRegistered(this.customer);
+    }
   }
 }
 </script>
