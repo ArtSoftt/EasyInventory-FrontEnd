@@ -6,8 +6,6 @@
       </pv-button>
       <h3><b>EasyInventory</b></h3>
     </template>
-
-
     <template #end>
       <language-switcher-component></language-switcher-component>
     </template>
@@ -44,14 +42,14 @@
           border:'solid #696cff',
           borderWidth:' 0 0 0 6px',
           color:'#696cff',
-        }" :closable="false" severity="error" v-if="visible">User and password invalid</pv-message>
+        }" :closable="false" severity="error" v-if="visible">User or password invalid</pv-message>
           <div class=" flex justify-content-center my-6">
             <pv-button @click.prevent="onSubmit()" type="button" class="w-10rem active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="Login">
             </pv-button>
           </div>
           <pv-divider/>
           <div class=" flex justify-content-center mt-5">
-            <pv-button @click.prevent="signUp()" type="button" class="w-17rem active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="login with Google Account">
+            <pv-button @click.prevent="signUp()" type="button" class="w-17rem mt-5 active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="login with Google Account">
             </pv-button>
           </div>
           <div class=" flex justify-content-center">
@@ -60,7 +58,11 @@
 
           </div>
           <div class=" flex justify-content-center">
-            <p>Do not have account an account? <a >Sign Up</a></p>
+            <p>Do not have account an account? 
+            <router-link to="/sign-up">
+              <a>Register</a>
+            </router-link>
+            </p>
           </div>
       </template>
     </pv-card>
@@ -103,10 +105,10 @@ export default{
       this.authApi.loginIn(body)
           .then(response=>{
             if(response.data[0] != null ){
-              this.user = User.toDisplayableUser(response.data[0]);
-              localStorage.setItem('user',this.user);
+              this.user = (response.data[0]);
+              localStorage.setItem('user',JSON.stringify(this.user));
               /*
-              * this.$router.push('/test');*/
+              * this.$router.push('/add-customer');*/
             }
             else{
               this.visible=true;
