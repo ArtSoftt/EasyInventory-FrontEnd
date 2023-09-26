@@ -5,7 +5,9 @@ const router= createRouter({
     history: createWebHistory(),
     routes:[
         {path:'/', name:'home', component:()=>import('../public/pages/login.component.vue')},
-        {path:'/sign-up',name:'signUp',component:()=>import('../public/pages/signup.component.vue')}
+        {path:'/user', name:'user', component:()=>import('../public/pages/user.component.vue')},
+        {path:'/sign-up',name:'signUp',component:()=>import('../public/pages/signup.component.vue')},
+
     ]
 
 })
