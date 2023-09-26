@@ -11,7 +11,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="Name">Name</label>
-                <pv-input-text type="text" class=" border-color-700 border-solid p-3 border-round w-full" id="name" v-model="name" required/>
+                <pv-input-text type="text" class=" border-color-700 border-solid p-3 border-round w-full" id="name" v-model="customer.name" required/>
               </div>
             </div>
           </div>
@@ -21,7 +21,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="id">id</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="id" v-model="id" required/>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="id" v-model="customer.id" required/>
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="lastName">lastName</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="lastName" v-model="lastName" required/>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="lastName" v-model="customer.lastName" required/>
               </div>
             </div>
 
@@ -45,7 +45,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="birthday">Birthday</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="birthday" v-model="birthday" required/>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="birthday" v-model="customer.birthday" required/>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="email">Email</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="email" v-model="email" required/>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="email" v-model="customer.email" required/>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="email">Email</label>
-                <pv-input-text type="text" class="b border-solid p-3 border-round w-full" id="email" v-model="email" required/>
+                <pv-input-text type="text" class="b border-solid p-3 border-round w-full" id="email" v-model="customer.email" required/>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="phone" v-model="phone" required/>
+                <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="phone" v-model="customer.phone" required/>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="address">Address</label>
-                <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="address" v-model="address" required/>
+                <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="address" v-model="customer.address" required/>
               </div>
             </div>
           </div>
