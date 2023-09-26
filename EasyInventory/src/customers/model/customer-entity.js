@@ -1,6 +1,7 @@
 
 export class Customer {
 
+
     constructor(id, name, lastname,birthdate ,email, phone, address) {
         this.id = id;
         this.name = name;
