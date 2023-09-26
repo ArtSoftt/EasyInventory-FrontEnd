@@ -21,16 +21,16 @@ import ToastService from "primevue/toastservice";
 
 //PrimeVue Components
 import Toolbar from "primevue/toolbar";
-import card from "primevue/card";
-import inputText from "primevue/inputtext";
-import button from "primevue/button";
+import Card from "primevue/card";
+import InputText from "primevue/inputtext";
+import Button from "primevue/button";
 
 createApp(App)
     .use(router)
     .use(PrimeVue, {ripple:true})
     .use(ToastService)
     .component("pv-toolbar",Toolbar)
-    .component("pv-card",card)
-    .component("pv-input-text",inputText)
-    .component("pv-button",button)
+    .component("pv-card",Card)
+    .component("pv-input-text",InputText)
+    .component("pv-button",Button)
     .mount('#app')
