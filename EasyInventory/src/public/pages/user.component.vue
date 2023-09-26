@@ -1,5 +1,7 @@
 <script setup>
+
 import toolbarComponent from "@/public/pages/toolbar.component.vue";
+
 </script>
 
 <template>
@@ -8,12 +10,12 @@ import toolbarComponent from "@/public/pages/toolbar.component.vue";
   </header>
 
   <h1>Hi User</h1>
-  <div class="flex align-content-center justify-content-center">
+  <div class="flex flex-column align-items-center">
     <pv-card style="width: 50rem">
       <template #content>
         <div class="flex flex-row align-content-center justify-content-evenly">
           <div class="flex justify-content-center align-items-center">
-            <img class="fixed w-10rem" src="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149329.png"
+            <img class="w-10rem" src="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149329.png"
                  alt="user">
           </div>
 
@@ -27,7 +29,25 @@ import toolbarComponent from "@/public/pages/toolbar.component.vue";
       </template>
 
     </pv-card>
+
+
+    <pv-card style="width: 50rem; margin-top: 2rem">
+      <template #content>
+        <div class="flex justify-content-evenly w-50rem">
+          <div class="flex align-items-center">
+            <p><i class="pi pi-credit-card"></i> State of Memebership</p>
+          </div>
+          <div class="flex align-items-center">
+            <pv-button>State</pv-button>
+          </div>
+        </div>
+
+      </template>
+    </pv-card>
+
   </div>
+
+
 </template>
 
 <style scoped>
