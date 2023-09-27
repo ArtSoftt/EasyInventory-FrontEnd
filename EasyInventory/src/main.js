@@ -29,7 +29,8 @@ import Divider from "primevue/divider"
 import Avatar from "primevue/avatar";
 import Dialog from "primevue/dialog";
 import Message from "primevue/message";
-
+import Sidebar from "primevue/sidebar";
+import Listbox from "primevue/listbox";
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -37,6 +38,8 @@ createApp(App)
     .use(PrimeVue, {ripple:true})
     .use(ToastService)
     .use(i18n)
+    .component("pv-list-box",Listbox)
+    .component("pv-sidebar",Sidebar)
     .component("pv-input-text",InputText)
     .component("pv-button",Button)
     .component("pv-toolbar",Toolbar)

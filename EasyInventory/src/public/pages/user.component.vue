@@ -1,16 +1,7 @@
-<script setup>
-
-import toolbarComponent from "@/public/pages/toolbar.component.vue";
-
-</script>
-
 <template>
-  <header>
-    <toolbar-component></toolbar-component>
-  </header>
-
-  <h1>Hi User</h1>
-  <div class="flex flex-column align-items-center">
+  <toolbar-component/>
+  <h1 class="flex flex-column align-items-center "> Hi {{ user.name }}</h1>
+  <div class="flex flex-column align-items-center ml-8">
     <pv-card style="width: 50rem">
       <template #content>
         <div class="flex flex-row align-content-center justify-content-evenly">
@@ -20,10 +11,10 @@ import toolbarComponent from "@/public/pages/toolbar.component.vue";
           </div>
 
           <div>
-            <h1 id="user-name">User Name</h1>
-            <p><i class="pi pi-id-card"></i> Birthday</p>
-            <p><i class="pi pi-phone"></i> Phone</p>
-            <p><i class="pi pi-envelope"></i> Email</p>
+            <h1 id="user-name">{{ user.name }}</h1>
+            <p><i class="pi pi-id-card"></i> {{ user.birthday }}</p>
+            <p><i class="pi pi-phone"></i> {{ user.phone }}</p>
+            <p><i class="pi pi-envelope"></i> {{ user.email }}</p>
           </div>
         </div>
       </template>
@@ -35,10 +26,10 @@ import toolbarComponent from "@/public/pages/toolbar.component.vue";
       <template #content>
         <div class="flex justify-content-evenly w-50rem">
           <div class="flex align-items-center">
-            <p><i class="pi pi-credit-card"></i> State of Memebership</p>
+            <p><i class="pi pi-credit-card"></i> {{user.subscription}}</p>
           </div>
           <div class="flex align-items-center">
-            <pv-button>State</pv-button>
+            <pv-button>Change</pv-button>
           </div>
         </div>
 
@@ -49,8 +40,23 @@ import toolbarComponent from "@/public/pages/toolbar.component.vue";
 
 
 </template>
+<script>
+import ToolbarComponent from "@/public/pages/toolbar.component.vue";
+export default {
+  name:"user-profile",
+  components:{ToolbarComponent},
+  data(){
+    return{
+      user:{},
+    }
+  },
+  created() {
+    this.user =JSON.parse(localStorage.getItem('user'));
+  }
+}
+</script>
 
-<style scoped>
+<style >
 #user-name {
   font-size: 2rem;
   margin: 0;

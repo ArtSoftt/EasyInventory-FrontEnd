@@ -107,8 +107,8 @@ export default{
             if(response.data[0] != null ){
               this.user = (response.data[0]);
               localStorage.setItem('user',JSON.stringify(this.user));
-              /*
-              * this.$router.push('/add-customer');*/
+
+               this.$router.push('/home');
             }
             else{
               this.visible=true;
