@@ -1,21 +1,21 @@
 //Routing Module
 import {createRouter, createWebHistory} from "vue-router";
+import userComponent from "@/public/pages/user.component.vue";
+import homeComponent from "@/inventory/components/home.component.vue";
+import signUpComponent from "@/public/pages/signup.component.vue";
 
-const router= createRouter({
+
+const router = createRouter({
     history: createWebHistory(),
-    routes:[
-      
-        {path:'/', name:'home', component:()=>import('../public/pages/login.component.vue')},
-        {path:'/user', name:'user', component:()=>import('../public/pages/user.component.vue')},
-        {path:'/sign-up',name:'signUp',component:()=>import('../public/pages/signup.component.vue')},
-        {path:'/home',name:'dashboard',component:()=>import('../inventory/components/home.component.vue')},
-  
-         {path:'/customers', name:'customers', component:()=>import('../customers/components/register-customer.component.vue')},
+    routes: [
+        {path: '/user', name: 'user', userComponent},
+        {path: '/sign-up', name: 'signUp', signUpComponent},
+        {path: '/home', name: 'dashboard', homeComponent},
+        {path: '/', name: 'home', homeComponent},
+
     ]
 
 })
-
-
 
 
 export default router;

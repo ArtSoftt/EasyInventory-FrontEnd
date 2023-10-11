@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/providers/services/provider-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/providers/services/provider-api.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/language-switcher.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/language-switcher.component.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/user.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/user.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/shops/services/shop-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/shops/services/shop-api.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +51,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/customers",
+    "last_opened_file_path": "C:/Developer/AplicacionesWeb/learning-center-git-profe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "C:\\Users\\Leo\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -103,5 +98,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
