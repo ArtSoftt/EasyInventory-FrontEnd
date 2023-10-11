@@ -38,7 +38,7 @@
           <pv-divider/>
 
           <div class=" flex justify-content-center mt-5">
-            <pv-button @click.prevent="signUp()" label="Login with Google Account">
+            <pv-button  label="Login with Google Account">
             </pv-button>
           </div>
 

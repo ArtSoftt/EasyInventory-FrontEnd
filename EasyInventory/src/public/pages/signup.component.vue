@@ -8,128 +8,127 @@
       <template #content>
 
 
-          <div class="form grid grid">
-            <div class="field col">
+        <div class="form grid grid">
+          <div class="field col">
 
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="firstName">First Name</label>
-                  <pv-input-text type="text" class=" border-color-700 border-solid p-3 border-round w-full"
-                                 id="firstname" v-model="firstname" required/>
-                </div>
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <pv-input-text type="text" class=" border-color-700 border-solid p-3 border-round w-full"
+                               id="firstname" v-model="firstname" required/>
               </div>
-
-            </div>
-
-            <div class="field col">
-
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="lastname"
-                                 v-model="lastname" required/>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="field col">
-
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="username">Username</label>
-                  <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="username"
-                                 v-model="username" required/>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="form grid grid">
-
-            <div class="field col">
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="birthday">Birthday</label>
-                  <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="birthday"
-                                 v-model="birthday" required/>
-                </div>
-              </div>
-            </div>
-            <div class="field col">
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="birthday">Company Name</label>
-                  <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="companyName"
-                                 v-model="companyName" required/>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form grid grid">
-            <div class="field col">
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <pv-input-text type="text" class="b border-solid p-3 border-round w-full" id="email" v-model="email"
-                                 required/>
-                </div>
-              </div>
-            </div>
-
-            <div class="field col">
-              <div class="form-group-inline">
-                <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="phone" v-model="phone"
-                                 required/>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form grid grid">
-            <div class="field col">
-              <div class="form-group-inline">
-
-              </div>
-            </div>
-
-
-            <!-- Fila -->
-            <div class="flex flex-row px-2">
-
-<!--              col1-->
-              <div class="mr-4">
-                <label class="w-2" for="password">Password</label>
-                <pv-input-text type="password" class=" border-solid p-3 border-round w-full" id="password"
-                               v-model="password" required/>
-              </div>
-
-<!--              col2-->
-              <div>
-                <label for="repeatPassword">Repeat Password</label>
-                <pv-input-text type="password" class="b border-solid p-3 border-round w-full" id="repeatPassword"
-                               v-model="repeatPassword" required/>
-                <p v-if="passwordMismatch" class="p-error">Passwords do not match.</p>
-              </div>
-
             </div>
 
           </div>
 
-          <div class="flex justify-content-evenly mt-5">
-            <pv-button @click="submitForm ">Submit</pv-button>
+          <div class="field col">
 
-            <router-link to="/">
-              <pv-button type="button"
-                         class="text-white text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700">
-                Cancel
-              </pv-button>
-            </router-link>
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="lastname"
+                               v-model="lastname" required/>
+              </div>
+            </div>
+
           </div>
+
+          <div class="field col">
+
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="username"
+                               v-model="username" required/>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form grid grid">
+
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="birthday"
+                               v-model="birthday" required/>
+              </div>
+            </div>
+          </div>
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="birthday">Company Name</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="companyName"
+                               v-model="companyName" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form grid grid">
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <pv-input-text type="text" class="b border-solid p-3 border-round w-full" id="email" v-model="email"
+                               required/>
+              </div>
+            </div>
+          </div>
+
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="phone" v-model="phone"
+                               required/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form grid grid">
+          <div class="field col">
+            <div class="form-group-inline">
+
+            </div>
+          </div>
+
+
+          <!-- Fila -->
+          <div class="flex flex-row px-2">
+
+            <!--              col1-->
+            <div class="mr-4">
+              <label class="w-2" for="password">Password</label>
+              <pv-input-text type="password" class=" border-solid p-3 border-round w-full" id="password"
+                             v-model="password" required/>
+            </div>
+
+            <!--              col2-->
+            <div>
+              <label for="repeatPassword">Repeat Password</label>
+              <pv-input-text type="password" class="b border-solid p-3 border-round w-full" id="repeatPassword"
+                             v-model="repeatPassword" required/>
+              <p v-if="passwordMismatch" class="p-error">Passwords do not match.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="flex flex-column mt-5">
+          <pv-button label="Submit" @click="submitForm "></pv-button>
+
+          <router-link  to="/">
+            <pv-button severity="danger" label="Cancel" type="button"
+                       class="mt-3 w-full">
+            </pv-button>
+          </router-link>
+        </div>
 
 
       </template>
