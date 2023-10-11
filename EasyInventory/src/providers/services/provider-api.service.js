@@ -4,6 +4,6 @@ export class ProviderApiService{
         return http.post('/list-providers',data);
     }
     getProviderById(id){
-        return http.get(`/list-provider/${id}`);
+        return http.get(`/list-providers/${id}`);
     }
 }

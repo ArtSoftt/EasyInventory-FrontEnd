@@ -7,17 +7,15 @@
     <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/customers/services/customer-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/customers/services/customer-api.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/products/services/product-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/products/services/product-api.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/providers/services/provider-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/providers/services/provider-api.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/user.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/user.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/sales/services/sales-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/sales/services/sales-api.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/shops/services/shop-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/shops/services/shop-api.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/home",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

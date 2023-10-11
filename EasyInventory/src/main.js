@@ -31,6 +31,8 @@ import Dialog from "primevue/dialog";
 import Message from "primevue/message";
 import Sidebar from "primevue/sidebar";
 import Listbox from "primevue/listbox";
+import Splitter from "primevue/splitter";
+import SplitterPanel from "primevue/splitterpanel";
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -39,6 +41,8 @@ createApp(App)
     .use(ToastService)
     .use(i18n)
     .component("pv-list-box",Listbox)
+    .component('pv-splitter',Splitter)
+    .component('pv-splitter-panel',SplitterPanel)
     .component("pv-sidebar",Sidebar)
     .component("pv-input-text",InputText)
     .component("pv-button",Button)

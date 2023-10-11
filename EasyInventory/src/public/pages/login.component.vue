@@ -10,7 +10,7 @@
       <language-switcher-component></language-switcher-component>
     </template>
   </pv-toolbar>
-  <div class="flex justify-content-center container mt-7 ">
+  <div class="flex justify-content-center container mt-7 w-full ">
     <pv-card class=" justify-content-start border-round-3xl w-26rem align-items-center  h-fit ">
       <template #title >
         <div class="pl-5 pt-5 pb-3 text-4xl">
@@ -75,7 +75,6 @@
 <script>
 import toolbarComponent from "@/public/pages/toolbar.component.vue";
 import {AuthServiceApi} from "@/shared/services/auth-service.api";
-import {User} from "@/inventory/model/user.entity.js"
 import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
 export default{
   name: "login.component.vue",
