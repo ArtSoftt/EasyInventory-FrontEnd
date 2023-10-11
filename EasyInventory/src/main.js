@@ -34,6 +34,7 @@ import Listbox from "primevue/listbox";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
 import Menu from "primevue/menu";
+import Column from "primevue/column";
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -47,6 +48,7 @@ createApp(App)
     .component("pv-sidebar",Sidebar)
     .component("pv-input-text",InputText)
     .component("pv-button",Button)
+    .component("pv-column",Column)
     .component("pv-toolbar",Toolbar)
     .component("pv-menu",Menu)
     .component("pv-avatar", Avatar)

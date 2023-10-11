@@ -36,10 +36,12 @@
             </pv-button>
           </div>
           <pv-divider/>
+
           <div class=" flex justify-content-center mt-5">
-            <pv-button @click.prevent="signUp()" type="button" class="w-17rem mt-5 active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="login with Google Account">
+            <pv-button @click.prevent="signUp()" label="Login with Google Account">
             </pv-button>
           </div>
+
           <div class=" flex justify-content-center">
             <p>Forgot the password
             </p>

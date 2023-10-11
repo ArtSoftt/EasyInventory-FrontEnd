@@ -1,6 +1,6 @@
 //Routing Module
 import {createRouter, createWebHistory} from "vue-router";
-import userComponent from "@/public/pages/user.component.vue";
+import userComponent from "@/user/pages/user.component.vue";
 import homeComponent from "@/inventory/components/home.component.vue";
 import signUpComponent from "../public/pages/signup.component.vue";
 import loginComponent from "@/public/pages/login.component.vue";
