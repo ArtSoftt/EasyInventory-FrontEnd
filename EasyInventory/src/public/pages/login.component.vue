@@ -1,8 +1,5 @@
 <template >
-
-  <toolbar></toolbar>
-
-  <div class="flex justify-content-center container mt-7 w-full ">
+    <div class="flex justify-content-center container mt-7 w-full ">
     <pv-card class=" justify-content-start border-round-3xl w-26rem align-items-center  h-fit ">
       <template #title >
         <div class="pl-5 pt-5 pb-3 text-4xl">

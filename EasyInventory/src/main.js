@@ -3,7 +3,7 @@ import App from './App.vue'
 
 
 //Router
-import router from "./router/index"
+import router from "./router/index.js"
 
 //PrimeVue
 import PrimeVue from "primevue/config";
@@ -33,6 +33,7 @@ import Sidebar from "primevue/sidebar";
 import Listbox from "primevue/listbox";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
+import Menu from "primevue/menu";
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -47,6 +48,7 @@ createApp(App)
     .component("pv-input-text",InputText)
     .component("pv-button",Button)
     .component("pv-toolbar",Toolbar)
+    .component("pv-menu",Menu)
     .component("pv-avatar", Avatar)
     .component("pv-divider",Divider)
     .component("pv-select-button", SelectButton)

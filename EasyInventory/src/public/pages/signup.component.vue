@@ -1,18 +1,8 @@
 <template>
-  <pv-toolbar class="bg-primary flex-wrap">
-    <template #start>
-      <pv-button class="sidebar-button">
-        <img alt="logo" src="../../assets/logo.png" class="h-4rem">
-      </pv-button>
-      <h3><b>EasyInventory</b></h3>
-    </template>
-    <template #end>
-      <language-switcher-component></language-switcher-component>
-    </template>
-  </pv-toolbar>
-<div class="justify-content-center flex mt-8 container">
 
-  <pv-card class="w-5 h-9 flex color-white align-content-center">
+<div class="flex align-content-center justify-content-center mt-8">
+
+  <pv-card  class="container">
     <template #title>Create your account</template>
     <template #content>
       <form class="form">
@@ -240,7 +230,5 @@ export default{
 }
 </script>
 <style>
-.container{
-  height: 60vh;
-}
+
 </style>
