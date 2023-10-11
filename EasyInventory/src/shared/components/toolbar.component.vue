@@ -23,7 +23,7 @@
 <script>
 import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
 export default{
-  name:"toolbar.component.vue",
+  name:"toolbar",
   components: { languageSwitcherComponent},
   data(){
     return{

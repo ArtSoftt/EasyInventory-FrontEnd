@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import ToolbarComponent from "@/public/pages/toolbar.component.vue";
+import ToolbarComponent from "@/shared/components/toolbar.component.vue";
 export default{
   name:'app',
   components:{ToolbarComponent},

@@ -10,7 +10,7 @@
            <template #content>
              <pv-card v-for="sale in sales" class="card my-1">
                <template #content>
-                 
+
                </template>
              </pv-card>
            </template>
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import ToolbarComponent from "@/public/pages/toolbar.component.vue";
+import ToolbarComponent from "@/shared/components/toolbar.component.vue";
 import {CustomerApiService} from "@/customers/services/customer-api.service";
 import {ProviderApiService} from "@/providers/services/provider-api.service";
 import {ProductApiService} from "@/products/services/product-api.service";

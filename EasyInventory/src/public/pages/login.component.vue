@@ -1,15 +1,7 @@
 <template >
-  <pv-toolbar class="bg-primary flex-wrap">
-    <template #start>
-      <pv-button class="sidebar-button" @click="drawer = !drawer">
-        <img alt="logo" src="../../assets/logo.png" class="h-4rem">
-      </pv-button>
-      <h3><b>EasyInventory</b></h3>
-    </template>
-    <template #end>
-      <language-switcher-component></language-switcher-component>
-    </template>
-  </pv-toolbar>
+
+  <toolbar></toolbar>
+
   <div class="flex justify-content-center container mt-7 w-full ">
     <pv-card class=" justify-content-start border-round-3xl w-26rem align-items-center  h-fit ">
       <template #title >
@@ -41,7 +33,6 @@
         <pv-message :style="{
           border:'solid #696cff',
           borderWidth:' 0 0 0 6px',
-          color:'#696cff',
         }" :closable="false" severity="error" v-if="visible">User or password invalid</pv-message>
           <div class=" flex justify-content-center my-6">
             <pv-button @click.prevent="onSubmit()" type="button" class="w-10rem active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="Login">
@@ -73,14 +64,14 @@
 </template>
 
 <script>
-import toolbarComponent from "@/public/pages/toolbar.component.vue";
+import toolbar from "@/shared/components/toolbar.component.vue";
 import {AuthServiceApi} from "@/shared/services/auth-service.api";
 import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
 export default{
   name: "login.component.vue",
   components:{
     languageSwitcherComponent,
-     toolbarComponent
+     toolbar
   },
   data(){
     return{
