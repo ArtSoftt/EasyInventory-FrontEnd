@@ -1,8 +1,15 @@
 <template>
+  <toolbar/>
+<!--  Div para dividir en 2 a un lado el sidebar y al otro las pages que se seleccionen-->
+  <div class="mt-3 flex">
+    <sidebar/>
 
-    <toolbar/>
+<!--    Segunda columna donde se desplegaran las pages-->
+    <div class="ml-5">
+      <router-view/>
+    </div>
 
-  <router-view/>
+  </div>
 
 
 
@@ -11,8 +18,7 @@
 
 <script setup>
 import toolbar from "@/shared/components/toolbar.component.vue";
-
-
+import sidebar from "@/shared/components/sidebar.component.vue";
 </script>
 
 
