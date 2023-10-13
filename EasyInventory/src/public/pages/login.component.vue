@@ -32,13 +32,13 @@
           borderWidth:' 0 0 0 6px',
         }" :closable="false" severity="error" v-if="visible">User or password invalid</pv-message>
           <div class=" flex justify-content-center my-6">
-            <pv-button @click.prevent="onSubmit()" type="button" class="w-10rem active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="Login">
+            <pv-button  @click.prevent="onSubmit()"  class="w-15rem"  label="Login">
             </pv-button>
           </div>
           <pv-divider/>
 
           <div class=" flex justify-content-center mt-5">
-            <pv-button  label="Login with Google Account">
+            <pv-button severity="secondary"  label="Login with Google Account">
             </pv-button>
           </div>
 
@@ -84,8 +84,9 @@ export default{
   },
   methods:{
     onSubmit(){
-      this.login()
+      this.login();
     },
+
      login(){
       const body={
         username:this.username,
@@ -98,6 +99,7 @@ export default{
               localStorage.setItem('user',JSON.stringify(this.user));
 
                this.$router.push('/home');
+
             }
             else{
               this.visible=true;
