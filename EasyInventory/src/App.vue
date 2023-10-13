@@ -26,12 +26,6 @@ import sidebar from "@/shared/components/sidebar.component.vue";
 
 
 <style>
-.body {
-  height: 80vh;
-}
 
-.container {
-  width: 65%;
-}
 
 </style>
