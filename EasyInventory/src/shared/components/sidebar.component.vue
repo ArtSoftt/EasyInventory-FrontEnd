@@ -5,20 +5,27 @@
       <br>
 
       <router-link to="/login"  >
-        <pv-button  class="w-full p-link flex align-items-center p-2 pl-4 text-color hover:surface-200 border-noround">
+        <pv-button @click="" class="w-full p-link flex align-items-center p-2 pl-4 text-color hover:surface-200 border-noround">
           <i class="pi pi-sign-out" />
           <span class="ml-2">Log Out</span>
         </pv-button>
       </router-link>
 
     </template>
-  </pv-menu>
+  </pv-menu >
 </template>
 
 
 
 <script setup>
 import { ref } from "vue";
+
+
+
+
+
+
+
 
 const items = ref([
   { label: 'Home', icon: 'pi pi-fw pi-home', to: "/user" },
