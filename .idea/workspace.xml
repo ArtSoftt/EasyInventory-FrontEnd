@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(home-inventory): added most selled product.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/search/components/search.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/search/components/search.component.vue" afterDir="false" />
-    </list>
+    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(search): added  default table." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +107,7 @@
       <updated>1695762487573</updated>
       <workItem from="1695762489101" duration="2953000" />
       <workItem from="1697214650760" duration="2580000" />
-      <workItem from="1697818132149" duration="9221000" />
+      <workItem from="1697818132149" duration="9657000" />
     </task>
     <task id="LOCAL-00001" summary="feat(search): added search component.">
       <option name="closed" value="true" />
@@ -185,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697844188549</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(search): added  default table.">
+      <option name="closed" value="true" />
+      <created>1697845048632</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697845048632</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +215,7 @@
     <MESSAGE value="feat(login): fixed items in local storage." />
     <MESSAGE value="feat(login): dropped button(hola) in login." />
     <MESSAGE value="feat(home-inventory): added most selled product." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(home-inventory): added most selled product." />
+    <MESSAGE value="feat(search): added  default table." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(search): added  default table." />
   </component>
 </project>
