@@ -28,8 +28,8 @@ import { ref } from "vue";
 
 
 const items = ref([
-  { label: 'Home', icon: 'pi pi-fw pi-home', to: "/user" },
-  { label: 'Search', icon: 'pi pi-fw pi-search' },
+  { label: 'Home', icon: 'pi pi-fw pi-home', to: "/home" },
+  { label: 'Search', icon: 'pi pi-fw pi-search', to: "/search" },
   { label: 'Customers', icon: 'pi pi-fw pi-user' },
   { label: 'Provider', icon: 'pi pi-fw pi-user' },
   { label: 'Products', icon: 'pi pi-fw pi-book' },
