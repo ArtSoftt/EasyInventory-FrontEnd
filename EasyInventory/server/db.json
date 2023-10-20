@@ -125,7 +125,7 @@
           "listOfProducts": [
             {
               "id": 1,
-              "quantity": 5
+              "quantity": 10
             },
             {
               "id": 2,

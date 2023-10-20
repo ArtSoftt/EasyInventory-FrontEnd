@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(login): fixed items in local storage." />
+    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(login): dropped button(hola) in login.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/server/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +31,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Leo2426"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e934e010-32fe-47b4-bdbf-17d979fd50d3" />
+        <option name="url" value="https://github.com/ArtSoftt/EasyInventory-FrontEnd" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -93,7 +111,7 @@
       <updated>1695762487573</updated>
       <workItem from="1695762489101" duration="2953000" />
       <workItem from="1697214650760" duration="2580000" />
-      <workItem from="1697818132149" duration="6878000" />
+      <workItem from="1697818132149" duration="8280000" />
     </task>
     <task id="LOCAL-00001" summary="feat(search): added search component.">
       <option name="closed" value="true" />
@@ -151,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697842407584</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat(login): dropped button(hola) in login.">
+      <option name="closed" value="true" />
+      <created>1697842720182</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697842720182</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +201,7 @@
     <MESSAGE value="feat(home-inventory): fixed elements position." />
     <MESSAGE value="feat: fixed elemnts." />
     <MESSAGE value="feat(login): fixed items in local storage." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(login): fixed items in local storage." />
+    <MESSAGE value="feat(login): dropped button(hola) in login." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(login): dropped button(hola) in login." />
   </component>
 </project>
