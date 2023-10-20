@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
+import languageSwitcherComponent from "@/shared/components/language-switcher.component.vue";
 export default{
   name:"toolbar",
   components: { languageSwitcherComponent},

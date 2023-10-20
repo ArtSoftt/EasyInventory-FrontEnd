@@ -65,7 +65,7 @@
 <script>
 import toolbar from "@/shared/components/toolbar.component.vue";
 import {AuthServiceApi} from "@/shared/services/auth-service.api";
-import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
+import languageSwitcherComponent from "@/shared/components/language-switcher.component.vue";
 export default{
   name: "login.component.vue",
   components:{

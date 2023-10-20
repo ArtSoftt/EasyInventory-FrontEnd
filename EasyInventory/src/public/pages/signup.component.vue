@@ -138,7 +138,7 @@
   </div>
 </template>
 <script>
-import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
+import languageSwitcherComponent from "@/shared/components/language-switcher.component.vue";
 import {CustomerApiService} from "@/customers/services/customer-api.service";
 import {ProviderApiService} from "@/providers/services/provider-api.service";
 import {ProductApiService} from "@/products/services/product-api.service";
