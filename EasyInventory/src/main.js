@@ -9,7 +9,6 @@ import router from "./router/index.js"
 import PrimeVue from "primevue/config";
 
 //Theme
-import '../src/assets/theme.css'
 import "primevue/resources/primevue.min.css"
 
 //PrimeVue Material Design Theme

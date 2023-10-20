@@ -1,15 +1,7 @@
 <template>
-  <pv-toolbar class="bg-primary flex-wrap">
-    <template #start>
-      <pv-button class="sidebar-button">
-        <img alt="logo" src="../../assets/logo.png" class="h-4rem">
-      </pv-button>
-      <h3><b>EasyInventory</b></h3>
-    </template>
-  </pv-toolbar>
 
-  <div class="justify-content-center flex mt-8 container">
-  <pv-card class="w-5 h-9 flex color-white align-content-center">
+  <div class="flex justify-content-center ">
+  <pv-card  class="w-8">
     <template #title>New Customer</template>
     <template #content>
       <form class="form">
