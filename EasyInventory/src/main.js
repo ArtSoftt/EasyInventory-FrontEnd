@@ -34,6 +34,8 @@ import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
 import Menu from "primevue/menu";
 import Column from "primevue/column";
+import DataTable from 'primevue/datatable';
+
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -46,6 +48,7 @@ createApp(App)
     .component('pv-splitter-panel',SplitterPanel)
     .component("pv-sidebar",Sidebar)
     .component("pv-input-text",InputText)
+    .component("pv-data-table",DataTable)
     .component("pv-button",Button)
     .component("pv-column",Column)
     .component("pv-toolbar",Toolbar)

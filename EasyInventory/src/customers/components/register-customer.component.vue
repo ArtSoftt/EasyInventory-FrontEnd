@@ -87,9 +87,9 @@
           </div>
 
           <div class="field col">
-            <router-link to="/">
-              <pv-button type="button" class="text-white text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700">Cancel</pv-button>
-            </router-link>
+<!--            <router-link to="/">-->
+<!--              <pv-button type="button" class="text-white text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700">Cancel</pv-button>-->
+<!--            </router-link>-->
           </div>
         </div>
 

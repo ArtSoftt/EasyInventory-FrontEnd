@@ -7,4 +7,7 @@ export class AuthServiceApi{
     loginIn(body){
         return http.get(`/users?username=${body.username}&password=${body.password}`);
     }
+
+
+
 }
