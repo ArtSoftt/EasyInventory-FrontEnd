@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="w-full">
   <div class="flex">
     <div class="col-6">
       <pv-card>
@@ -9,7 +9,8 @@
         <template #content>
           <pv-card v-for="sale in sales" class="card my-1">
             <template #content>
-<!--              <h1>{{ sale.totalCost}}</h1>-->
+             <p>Date: {{sale.date}}</p>
+             <p>Total Cost: $  {{sale.totalCost }}</p>
             </template>
           </pv-card>
         </template>
@@ -21,7 +22,12 @@
           Most Selled Product
         </template>
         <template #content>
-
+          <pv-card  class="card my-1">
+            <template #content>
+              <p>Id: {{this.productmostselled.id}}</p>
+              <p>Cantidad: {{this.productmostselled.quantity}}</p>
+            </template>
+          </pv-card>
         </template>
       </pv-card>
     </div>
@@ -72,11 +78,10 @@
         <template #content>
           <pv-card v-for="product in products" class="card my-1">
             <template #content>
-              <div class="flex">
-                {{ product.name }}
-                <span class="example-spacer"></span>
-                {{ product.stock }}
-              </div>
+              <p>ID: {{ product.id }}</p>
+              <p>Name: {{ product.name }}</p>
+              <p> Stock: {{ product.stock }}</p>
+              <p> Price: $ {{ product.unitPrice }}</p>
             </template>
           </pv-card>
         </template>
@@ -96,38 +101,29 @@ export default {
   components: {ToolbarComponent},
   data() {
     return {
-
-
+      productmostselled: {quantity: 0}
     }
   },
   created() {
+
+    //Obtener los datos del local Storage
     this.user = (JSON.parse(localStorage.getItem('user')));
     this.sales = (JSON.parse(localStorage.getItem('sales')));
     this.providers = (JSON.parse(localStorage.getItem('providers')));
     this.products = (JSON.parse(localStorage.getItem('products')));
     this.shops = (JSON.parse(localStorage.getItem('shops')));
-    // this.sales = this.saleApi.getSalesById(this.user.idListSales)
-    //     .then((response) => {
-    //       this.sales = response.data.sales;
-    //
-    //     })
-    // this.shops = this.shopApi.getById(this.user.idListShops)
-    //     .then((response) => {
-    //       this.shops = response.data.shops;
-    //       console.log(this.shops)
-    //     })
-    // this.providers = this.providerApi.getProviderById(this.user.idListProviders)
-    //     .then((response) => {
-    //       this.providers = response.data.providers;
-    //     })
-    // this.products = this.productApi.getProductById(this.user.idListProducts)
-    //     .then((response) => {
-    //       this.products = response.data.products;
-    //     })
-    // this.sales = this.saleApi.getSalesById(this.user.idListSales)
-    //     .then((response) => {
-    //       this.sales = response.data.sales;
-    //     })
+
+    // Hallar el Product mas vendido en sales
+    for (const argument of this.sales) {
+      for (const argumentElement of argument.listOfProducts) {
+        if (argumentElement.quantity > this.productmostselled.quantity) {
+          this.productmostselled = argumentElement;
+        }
+      }
+    }
+
+
+
   },
   methods: {}
 }
