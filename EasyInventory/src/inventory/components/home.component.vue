@@ -1,5 +1,5 @@
 <template>
-<div class="w-full">
+<div class="w-full px-5">
   <div class="flex">
     <div class="col-6">
       <pv-card>
@@ -129,9 +129,7 @@ export default {
 }
 </script>
 <style>
-.container {
-    height: 100%;
-}
+
 
 
 </style>

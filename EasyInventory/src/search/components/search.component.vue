@@ -1,23 +1,25 @@
 <template>
   <div>
     <h1>Buscar Datos</h1>
+
     <div class="p-field p-grid">
       <div class="p-col-12 p-md-4">
         <label for="searchInput">Buscar:</label>
         <input
             id="searchInput"
             v-model="searchText"
-            @input="searchData"
+            @input="filterData"
             class="p-inputtext"
         />
       </div>
     </div>
-    <div class="p-grid">
+
+    <div class="mt-4 p-grid">
       <div class="p-col">
-        <pv-data-table :value="filteredData">
-          <pv-column field="customer" header="Customer"></pv-column>
-          <pv-column field="provider" header="Provider"></pv-column>
-          <pv-column field="product" header="Product"></pv-column>
+        <pv-data-table :value="products">
+          <pv-column field="id" header="Id"></pv-column>
+          <pv-column field="name" header="Name"></pv-column>
+          <pv-column field="unitPrice" header="Price"></pv-column>
         </pv-data-table>
       </div>
     </div>
@@ -27,7 +29,7 @@
 <script setup>
 import {ref} from "vue";
 let user = JSON.parse(localStorage.getItem('user'));
-
+let products = ref(JSON.parse(localStorage.getItem('products')))
 </script>
 
 <style scoped>
