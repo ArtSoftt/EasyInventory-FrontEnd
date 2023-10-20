@@ -26,6 +26,8 @@ import sidebar from "@/shared/components/sidebar.component.vue";
 
 
 <style>
-
+  *{
+    font-family: 'Roboto', sans-serif;
+  }
 
 </style>
