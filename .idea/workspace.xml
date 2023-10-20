@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(routing): added routes to complemented routes in sidebar.">
+    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(home-inventory): fixed elements position.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/customers/components/register-customer.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/customers/components/register-customer.component.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EasyInventory/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/providers/components/provider.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/providers/components/provider.component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/search/components/search.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/search/components/search.component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/shared/services/auth-service.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/shared/services/auth-service.api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +116,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697778200816</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(customer): fixed router.">
+      <option name="closed" value="true" />
+      <created>1697778614924</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778614924</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(customer): fixed router.">
+      <option name="closed" value="true" />
+      <created>1697778621311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778621311</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(home-inventory): fixed elements position.">
+      <option name="closed" value="true" />
+      <created>1697778798969</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778798969</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +160,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(search): added search component." />
     <MESSAGE value="feat(routing): added routes to complemented routes in sidebar." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(routing): added routes to complemented routes in sidebar." />
+    <MESSAGE value="feat(customer): fixed router." />
+    <MESSAGE value="feat(home-inventory): fixed elements position." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(home-inventory): fixed elements position." />
   </component>
 </project>

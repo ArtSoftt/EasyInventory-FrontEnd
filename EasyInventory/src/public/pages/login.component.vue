@@ -98,6 +98,7 @@ export default{
               this.user = (response.data[0]);
               localStorage.setItem('user',JSON.stringify(this.user));
 
+
                this.$router.push('/home');
 
             }
