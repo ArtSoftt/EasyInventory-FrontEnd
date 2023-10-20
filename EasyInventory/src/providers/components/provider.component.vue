@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello provider</h1>
+  <h1>New Provider</h1>
 </template>
 
 <script setup>
