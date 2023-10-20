@@ -35,8 +35,6 @@
         <div class=" flex justify-content-center my-6">
           <pv-button @click.prevent="onSubmit()" class="w-15rem" label="Login">
           </pv-button>
-          <pv-button @click="lanzar" label="Hola">
-          </pv-button>
         </div>
         <pv-divider/>
 
@@ -100,10 +98,6 @@ export default {
 
 
   methods: {
-    lanzar() {
-      console.log(this.user)
-    },
-
     async onSubmit() {
       const body = {
         username: this.username,
@@ -120,7 +114,6 @@ export default {
 
           //agregar user al local storage
           localStorage.setItem('user', JSON.stringify(this.user));
-          console.log(this.user)
 
         } else {
           this.visible = true;
@@ -152,9 +145,7 @@ export default {
           })
 
     },
-
   }
-
 }
 
 </script>
