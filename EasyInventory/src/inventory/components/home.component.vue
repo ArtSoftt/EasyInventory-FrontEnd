@@ -9,7 +9,7 @@
         <template #content>
           <pv-card v-for="sale in sales" class="card my-1">
             <template #content>
-
+<!--              <h1>{{ sale.totalCost}}</h1>-->
             </template>
           </pv-card>
         </template>
@@ -90,53 +90,44 @@
 
 <script>
 import ToolbarComponent from "@/shared/components/toolbar.component.vue";
-import {CustomerApiService} from "@/customers/services/customer-api.service";
-import {ProviderApiService} from "@/providers/services/provider-api.service";
-import {ProductApiService} from "@/products/services/product-api.service";
-import {SalesApiService} from "@/sales/services/sales-api.service";
-import {ShopApiService} from "@/shops/services/shop-api.service";
 
 export default {
   name: "home-component",
   components: {ToolbarComponent},
   data() {
     return {
-      sales: [],
-      shops: [],
-      user: {},
-      providers: [],
-      products: [],
-      bestProduct: [],
-      saleApi: new SalesApiService(),
-      shopApi: new ShopApiService(),
-      customerApi: new CustomerApiService(),
-      providerApi: new ProviderApiService(),
-      productApi: new ProductApiService()
+
+
     }
   },
   created() {
     this.user = (JSON.parse(localStorage.getItem('user')));
-    this.sales = this.saleApi.getSalesById(this.user.idListSales)
-        .then((response) => {
-          console.log('HOLA');
-          this.sales = response.data.sales;
-        })
-    this.shops = this.shopApi.getById(this.user.idListShops)
-        .then((response) => {
-          this.shops = response.data.shops;
-        })
-    this.providers = this.providerApi.getProviderById(this.user.idListProviders)
-        .then((response) => {
-          this.providers = response.data.providers;
-        })
-    this.products = this.productApi.getProductById(this.user.idListProducts)
-        .then((response) => {
-          this.products = response.data.products;
-        })
-    this.sales = this.saleApi.getSalesById(this.user.idListSales)
-        .then((response) => {
-          this.sales = response.data.sales;
-        })
+    this.sales = (JSON.parse(localStorage.getItem('sales')));
+    this.providers = (JSON.parse(localStorage.getItem('providers')));
+    this.products = (JSON.parse(localStorage.getItem('products')));
+    this.shops = (JSON.parse(localStorage.getItem('shops')));
+    // this.sales = this.saleApi.getSalesById(this.user.idListSales)
+    //     .then((response) => {
+    //       this.sales = response.data.sales;
+    //
+    //     })
+    // this.shops = this.shopApi.getById(this.user.idListShops)
+    //     .then((response) => {
+    //       this.shops = response.data.shops;
+    //       console.log(this.shops)
+    //     })
+    // this.providers = this.providerApi.getProviderById(this.user.idListProviders)
+    //     .then((response) => {
+    //       this.providers = response.data.providers;
+    //     })
+    // this.products = this.productApi.getProductById(this.user.idListProducts)
+    //     .then((response) => {
+    //       this.products = response.data.products;
+    //     })
+    // this.sales = this.saleApi.getSalesById(this.user.idListSales)
+    //     .then((response) => {
+    //       this.sales = response.data.sales;
+    //     })
   },
   methods: {}
 }
