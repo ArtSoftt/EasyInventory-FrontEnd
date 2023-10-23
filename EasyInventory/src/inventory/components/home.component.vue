@@ -101,10 +101,11 @@ export default {
   components: {ToolbarComponent},
   data() {
     return {
-      productmostselled: {quantity: 0}
+      productmostselled: {quantity: 0},
     }
   },
   created() {
+    console.log("Home component created")
 
     //Obtener los datos del local Storage
     this.user = (JSON.parse(localStorage.getItem('user')));

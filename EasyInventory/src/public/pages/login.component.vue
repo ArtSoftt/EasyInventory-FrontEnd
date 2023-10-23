@@ -64,90 +64,89 @@
 </template>
 
 <script>
-import toolbar from "@/shared/components/toolbar.component.vue";
 import {AuthServiceApi} from "@/shared/services/auth-service.api";
-import languageSwitcherComponent from "@/shared/components/language-switcher.component.vue";
 import {SalesApiService} from "@/sales/services/sales-api.service";
 import {ShopApiService} from "@/shops/services/shop-api.service";
 import {CustomerApiService} from "@/customers/services/customer-api.service";
 import {ProviderApiService} from "@/providers/services/provider-api.service";
 import {ProductApiService} from "@/products/services/product-api.service";
 
+
 export default {
   name: "login.component.vue",
-  components: {
-    languageSwitcherComponent,
-    toolbar
-  },
+  components: {},
   data() {
     return {
       visible: false,
       username: "Polbored",
       password: "Pass1234",
       authApi: new AuthServiceApi(),
-
       saleApi: new SalesApiService(),
       shopApi: new ShopApiService(),
       customerApi: new CustomerApiService(),
       providerApi: new ProviderApiService(),
       productApi: new ProductApiService(),
-
-    }
-
+    };
   },
-
-
   methods: {
     async onSubmit() {
       const body = {
         username: this.username,
-        password: this.password
-      }
-      this.response = await this.authApi.logIn(body)
-      this.users = this.response.data
+        password: this.password,
+      };
+      this.response = await this.authApi.logIn(body);
+      this.users = this.response.data;
 
       for (let i = 0; i < this.users.length; i++) {
         if (this.users[i].username === this.username && this.users[i].password === this.password) {
-          this.user = this.users[i]
-          await this.getAllData();
-          this.$router.push('/home');
-
-          //agregar user al local storage
+          this.user = this.users[i];
+          // Agrega user al localStorage de manera sincrónica
           localStorage.setItem('user', JSON.stringify(this.user));
 
+          // Obtiene todos los datos del usuario de manera sincrónica
+          await this.getAllData();
+
+          // Redirige al usuario a la página de inicio
+          this.$router.push('/home');
         } else {
           this.visible = true;
+          break;
         }
       }
-
     },
-    //Obtener todos los datos del usuario como ventas providers y todos los datos del sidebar
-    getAllData() {
-      this.saleApi.getSalesById(this.user.idListSales)
+    async getAllData() {
+      const promises = [];
+
+      // Agrega todas las operaciones de lectura del localStorage a un array de promesas
+      promises.push(this.saleApi.getSalesById(this.user.idListSales)
           .then((response) => {
             this.sales = response.data.sales;
             localStorage.setItem('sales', JSON.stringify(this.sales));
-          })
-      this.shopApi.getById(this.user.idListShops)
+          }));
+
+      promises.push(this.shopApi.getById(this.user.idListShops)
           .then((response) => {
             this.shops = response.data.shops;
             localStorage.setItem('shops', JSON.stringify(this.shops));
-          })
-      this.providerApi.getProviderById(this.user.idListProviders)
+          }));
+
+      promises.push(this.providerApi.getProviderById(this.user.idListProviders)
           .then((response) => {
             this.providers = response.data.providers;
             localStorage.setItem('providers', JSON.stringify(this.providers));
-          })
-      this.productApi.getProductById(this.user.idListProducts)
+          }));
+
+      promises.push(this.productApi.getProductById(this.user.idListProducts)
           .then((response) => {
             this.products = response.data.products;
             localStorage.setItem('products', JSON.stringify(this.products));
-          })
+          }));
 
+      // Espera a que todas las operaciones se completen antes de continuar
+      await Promise.all(promises);
     },
-  }
-}
-
+  },
+};
 </script>
 
 <style>
