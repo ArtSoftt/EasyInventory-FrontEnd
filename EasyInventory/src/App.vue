@@ -31,7 +31,7 @@
           <RouterView/>
         </pv-splitter-panel>
       </pv-splitter>
-    </div>
+  </div>
   <div v-else>
     <RouterView/>
 
@@ -56,7 +56,7 @@ export default{
         {label:"Provider", icon:"pi pi-users",to:"providers"},
         {label:"Products", icon:"pi pi-user",to:"products"},
         {label:"Shopping", icon:"pi pi-shopping-cart",to:"shop"},
-        {label:"Sales", icon:"pi pi-money-bill",to:"sales"},
+        {label:"Sales", icon:"pi pi-money-bill",to:"shopping_cart"},
         {label:"Log out", icon:"pi pi-sales",to:""}
       ]
     }

@@ -10,8 +10,12 @@
            <template #content>
              <pv-card v-for="sale in sales" class="card my-1">
                <template #content>
-                 
+                 <span>Id:{{sale.id}}</span><br>
+                 <span>Date:{{sale.date}}</span><br>
+                 <span>Total Cost:{{sale.totalCost}}</span><br>
                </template>
+
+
              </pv-card>
            </template>
          </pv-card>
@@ -116,10 +120,11 @@ export default{
   },
   created() {
     this.user=(JSON.parse(localStorage.getItem('user')));
-    this.sales= this.saleApi.getSalesById(this.user.idListSales)
+    this.sales= this.saleApi.getSaleByIdUser(this.user.id)
         .then((response)=>{
           console.log('HOLA');
-          this.sales=response.data.sales;
+          this.sales=response.data;
+          this.sales=this.sales.slice(-2);
         })
     this.shops =this.shopApi.getById(this.user.idListShops)
         .then((response)=>{
@@ -133,10 +138,7 @@ export default{
         .then((response)=>{
           this.products=response.data.products;
         })
-    this.sales=this.saleApi.getSalesById(this.user.idListSales)
-        .then((response)=>{
-          this.sales=response.data.sales;
-        })
+
   },
   methods:{
 

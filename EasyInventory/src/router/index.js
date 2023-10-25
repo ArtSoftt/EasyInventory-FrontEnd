@@ -11,6 +11,8 @@ const router= createRouter({
         {path:'/home',name:'dashboard',component:()=>import('../inventory/components/home.component.vue')},
   
          {path:'/customers', name:'customers', component:()=>import('../customers/components/register-customer.component.vue')},
+        {path:'/sales',name:'sales',component:()=>import('../sales/components/sales-add.component.vue')},
+        {path:'/shopping_cart',name:'shopping_cart',component:()=>import('../sales/pages/shopping-cart.component.vue')}
     ]
 
 })

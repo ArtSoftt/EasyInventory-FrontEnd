@@ -71,7 +71,6 @@
           "email": "artesco@gmail.com",
           "city": "lima",
           "address": "Av. Los Mangos"
-
         }
       ]
     }
@@ -113,25 +112,80 @@
       ]
     }
   ],
-  "list-sales": [
+  "sales": [
     {
       "id": 1,
-      "sales": [
+      "id_user": 1,
+      "customer_id": 1,
+      "date": "2023/09/25",
+      "totalCost": 70,
+      "listOfProducts": [
         {
           "id": 1,
-          "customer-id": 1,
-          "date": "25/09/2023",
-          "totalCost": 70,
-          "listOfProducts": [
-            {
-              "id": 1,
-              "quantity": 5
-            },
-            {
-              "id": 2,
-              "quantity": 5
-            }
-          ]
+          "id_product": 3,
+          "quantity": 5
+        },
+        {
+          "id": 2,
+          "id_product": 1,
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "id_user": 1,
+      "customer_id": 1,
+      "date": "2023/09/26",
+      "totalCost": 80,
+      "listOfProducts": [
+        {
+          "id": 1,
+          "id_product": 2,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "id_product": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "id_user": 2,
+      "customer_id": 1,
+      "date": "2023/09/25",
+      "totalCost": 70,
+      "listOfProducts": [
+        {
+          "id": 1,
+          "id_product": 3,
+          "quantity": 5
+        },
+        {
+          "id": 2,
+          "id_product": 1,
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "id_user": 1,
+      "customer_id": 1,
+      "date": "2023/09/26",
+      "totalCost": 80,
+      "listOfProducts": [
+        {
+          "id": 1,
+          "id_product": 2,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "id_product": 3,
+          "quantity": 4
         }
       ]
     }
