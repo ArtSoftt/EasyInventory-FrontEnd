@@ -37,7 +37,7 @@ import Column from "primevue/column";
 import DataTable from 'primevue/datatable';
 import Toast from "primevue/toast";
 import InputNumber from "primevue/inputnumber";
-
+import Calendar from "primevue/calendar";
 
 //i18n support
 import i18n from "./i18n"
@@ -64,4 +64,5 @@ createApp(App)
     .component("pv-dialog",Dialog)
     .component("pv-message",Message)
     .component("pv-input-number",InputNumber)
+    .component("pv-calendar",Calendar)
     .mount('#app')
