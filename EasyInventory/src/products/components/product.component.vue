@@ -7,36 +7,36 @@
     <form @submit="onSubmit" class="flex flex-column gap-2">
 
 
-      <label for="input-company">Name of Product</label>
-      <pv-input-text id="input-company" v-model="name" type="text" :class="{ 'p-invalid': nameError }"
+      <label for="name">Name of Product</label>
+      <pv-input-text id="name" v-model="name" type="text" :class="{ 'p-invalid': nameError }"
                      aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ nameError || '&nbsp;' }}</small>
 
 
-      <label for="input-phone">Date of Purchase</label>
-      <pv-calendar showButtonBar id="input-phone" v-model="date" :maxlength="9" type="text" :class="{ 'p-invalid': dateError }"
+      <label for="date">Date of Purchase</label>
+      <pv-calendar showButtonBar id="date" v-model="date" :maxlength="9" type="text" :class="{ 'p-invalid': dateError }"
                      aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ dateError || '&nbsp;' }}</small>
 
 
-      <label for="input-ruc">Discount</label>
-      <pv-input-number id="input-ruc" v-model="discount" type="text" />
+      <label for="discount">Discount</label>
+      <pv-input-number id="discount" v-model="discount" type="text" />
       <small></small>
 
 
-      <label for="input-phone">Amount</label>
-      <pv-input-number id="input-phone" v-model="amount" :class="{ 'p-invalid': amountError }"
+      <label for="amount">Amount</label>
+      <pv-input-number id="amount" v-model="amount" :class="{ 'p-invalid': amountError }"
                      aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ amountError || '&nbsp;' }}</small>
 
 
-      <label for="input-phone">Unit Price</label>
-      <pv-input-number mode="currency" currency="USD" locale="en-US"  id="input-phone" v-model="unitPrice" :class="{ 'p-invalid': unitPriceError }"
+      <label for="price">Unit Price</label>
+      <pv-input-number mode="currency" currency="USD" locale="en-US"  id="price" v-model="unitPrice" :class="{ 'p-invalid': unitPriceError }"
                        aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ unitPriceError || '&nbsp;' }}</small>
 
-      <label for="input-phone">Stock</label>
-      <pv-input-number id="input-phone" v-model="stock" :class="{ 'p-invalid': stockError }"
+      <label for="stock">Stock</label>
+      <pv-input-number id="stock" v-model="stock" :class="{ 'p-invalid': stockError }"
                        aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ stockError || '&nbsp;' }}</small>
 
