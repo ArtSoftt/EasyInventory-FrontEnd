@@ -36,7 +36,7 @@ import Menu from "primevue/menu";
 import Column from "primevue/column";
 import DataTable from 'primevue/datatable';
 import Toast from "primevue/toast";
-
+import InputNumber from "primevue/inputnumber";
 
 
 //i18n support
@@ -63,4 +63,5 @@ createApp(App)
     .component("pv-card",Card)
     .component("pv-dialog",Dialog)
     .component("pv-message",Message)
+    .component("pv-input-number",InputNumber)
     .mount('#app')
