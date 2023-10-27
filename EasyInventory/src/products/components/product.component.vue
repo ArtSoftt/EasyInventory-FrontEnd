@@ -31,7 +31,7 @@
 
 
       <label for="input-phone">Unit Price</label>
-      <pv-input-number id="input-phone" v-model="unitPrice" :class="{ 'p-invalid': unitPriceError }"
+      <pv-input-number mode="currency" currency="USD" locale="en-US"  id="input-phone" v-model="unitPrice" :class="{ 'p-invalid': unitPriceError }"
                        aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ unitPriceError || '&nbsp;' }}</small>
 
