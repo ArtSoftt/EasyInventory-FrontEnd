@@ -104,7 +104,7 @@ const {value: stock, errorMessage: stockError} = useField('stock', value => {
 
 const onSubmit = handleSubmit((values) => {
   // Values tiene el objeto con los valores de los campos
-  toast.add({severity: 'info', summary: 'Form Submitted', detail: `Added Provider: ${values.name}`, life: 3000});
+  toast.add({severity: 'info', summary: 'Form Submitted', detail: `Added Product: ${values.name}`, life: 3000});
   console.log(values)
   resetForm();
 });
