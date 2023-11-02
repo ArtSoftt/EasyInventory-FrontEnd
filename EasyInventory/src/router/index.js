@@ -9,7 +9,7 @@ import customerComponent from "@/customers/components/register-customer.componen
 import productComponent from "@/products/components/product.component.vue";
 import providerComponent from "@/providers/components/provider.component.vue";
 import shoppingComponent from "@/shops/component/shopping.component.vue";
-import saleComponent from "@/sales/components/sales.vue";
+import saleComponent from "@/sales/components/sales.component.vue";
 
 
 const router = createRouter({
