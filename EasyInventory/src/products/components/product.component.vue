@@ -15,23 +15,24 @@
 
       <label for="date">Date of Purchase</label>
       <pv-calendar showButtonBar id="date" v-model="date" :maxlength="9" type="text" :class="{ 'p-invalid': dateError }"
-                     aria-describedby="text-error"/>
+                   aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ dateError || '&nbsp;' }}</small>
 
 
       <label for="discount">Discount</label>
-      <pv-input-number id="discount" v-model="discount" type="text" />
+      <pv-input-number id="discount" v-model="discount" type="text"/>
       <small></small>
 
 
       <label for="amount">Amount</label>
       <pv-input-number id="amount" v-model="amount" :class="{ 'p-invalid': amountError }"
-                     aria-describedby="text-error"/>
+                       aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ amountError || '&nbsp;' }}</small>
 
 
       <label for="price">Unit Price</label>
-      <pv-input-number mode="currency" currency="USD" locale="en-US"  id="price" v-model="unitPrice" :class="{ 'p-invalid': unitPriceError }"
+      <pv-input-number mode="currency" currency="USD" locale="en-US" id="price" v-model="unitPrice"
+                       :class="{ 'p-invalid': unitPriceError }"
                        aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ unitPriceError || '&nbsp;' }}</small>
 
@@ -39,7 +40,6 @@
       <pv-input-number id="stock" v-model="stock" :class="{ 'p-invalid': stockError }"
                        aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ stockError || '&nbsp;' }}</small>
-
 
 
       <div class="flex justify-content-center">
@@ -99,7 +99,6 @@ const {value: stock, errorMessage: stockError} = useField('stock', value => {
   }
   return true;
 });
-
 
 
 const onSubmit = handleSubmit((values) => {

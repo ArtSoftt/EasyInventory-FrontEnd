@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="feat(search): added  default table.">
+    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="fix(product): fixed message.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/shops/component/shopping.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/shops/component/shopping.component.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +111,10 @@
       <workItem from="1695762489101" duration="2953000" />
       <workItem from="1697214650760" duration="2580000" />
       <workItem from="1697818132149" duration="9657000" />
+      <workItem from="1698693733717" duration="215000" />
+      <workItem from="1698696071855" duration="1416000" />
+      <workItem from="1698868517163" duration="328000" />
+      <workItem from="1698868869080" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="feat(search): added search component.">
       <option name="closed" value="true" />
@@ -193,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697845048632</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix(product): fixed message.">
+      <option name="closed" value="true" />
+      <created>1698705043178</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698705043178</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +230,9 @@
     <MESSAGE value="feat(login): fixed items in local storage." />
     <MESSAGE value="feat(login): dropped button(hola) in login." />
     <MESSAGE value="feat(home-inventory): added most selled product." />
+    <MESSAGE value="fix(products): fixed ids." />
     <MESSAGE value="feat(search): added  default table." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(search): added  default table." />
+    <MESSAGE value="fix(product): fixed message." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(product): fixed message." />
   </component>
 </project>
