@@ -14,7 +14,7 @@
 
 
       <label for="date">Date of Purchase</label>
-      <pv-calendar showButtonBar id="date" v-model="date" :maxlength="9" type="text" :class="{ 'p-invalid': dateError }"
+      <pv-calendar showButtonBar  showIcon  id="date" v-model="date" :maxlength="9" type="text" :class="{ 'p-invalid': dateError }"
                    aria-describedby="text-error"/>
       <small class="p-error" id="text-error">{{ dateError || '&nbsp;' }}</small>
 
