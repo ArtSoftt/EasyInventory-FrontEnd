@@ -1,23 +1,12 @@
-<template >
-  <pv-toolbar class="bg-primary flex-wrap">
-    <template #start>
-      <pv-button class="sidebar-button" @click="drawer = !drawer">
-        <img alt="logo" src="../../assets/logo.png" class="h-4rem">
-      </pv-button>
-      <h3><b>EasyInventory</b></h3>
-    </template>
-    <template #end>
-      <language-switcher-component></language-switcher-component>
-    </template>
-  </pv-toolbar>
+<template>
   <div class="flex justify-content-center container mt-7 w-full ">
     <pv-card class=" justify-content-start border-round-3xl w-26rem align-items-center  h-fit ">
-      <template #title >
+      <template #title>
         <div class="pl-5 pt-5 pb-3 text-4xl">
           Log in
         </div>
       </template>
-      <template #content >
+      <template #content>
         <div class="formgrid text-2xl pl-5">
           <div class="field col">
 
@@ -25,7 +14,7 @@
               Username
             </div>
             <div class="field row">
-              <pv-input-text class="w-18rem" type="text"  v-model="username" placeholder="username"></pv-input-text>
+              <pv-input-text class="w-18rem" type="text" v-model="username" placeholder="username"></pv-input-text>
             </div>
             <div class="field row ">
               <div class="field row">
@@ -41,29 +30,31 @@
         <pv-message :style="{
           border:'solid #696cff',
           borderWidth:' 0 0 0 6px',
-          color:'#696cff',
-        }" :closable="false" severity="error" v-if="visible">User or password invalid</pv-message>
-          <div class=" flex justify-content-center my-6">
-            <pv-button @click.prevent="onSubmit()" type="button" class="w-10rem active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="Login">
-            </pv-button>
-          </div>
-          <pv-divider/>
-          <div class=" flex justify-content-center mt-5">
-            <pv-button @click.prevent="signUp()" type="button" class="w-17rem mt-5 active:border-primary-700 transition-all hover:bg-primary-600 transition-duration-200 btn-login border-2 border-round" label="login with Google Account">
-            </pv-button>
-          </div>
-          <div class=" flex justify-content-center">
-            <p>Forgot the password
-            </p>
+        }" :closable="false" severity="error" v-if="visible">User or password invalid
+        </pv-message>
+        <div class=" flex justify-content-center my-6">
+          <pv-button @click.prevent="onSubmit()" class="w-15rem" label="Login">
+          </pv-button>
+        </div>
+        <pv-divider/>
 
-          </div>
-          <div class=" flex justify-content-center">
-            <p>Do not have account an account? 
+        <div class=" flex justify-content-center mt-5">
+          <pv-button severity="secondary" label="Login with Google Account">
+          </pv-button>
+        </div>
+
+        <div class=" flex justify-content-center">
+          <p>Forgot the password
+          </p>
+
+        </div>
+        <div class=" flex justify-content-center">
+          <p>Do not have account an account?
             <router-link to="/sign-up">
               <a>Register</a>
             </router-link>
-            </p>
-          </div>
+          </p>
+        </div>
       </template>
     </pv-card>
 
@@ -73,54 +64,93 @@
 </template>
 
 <script>
-import toolbarComponent from "@/public/pages/toolbar.component.vue";
 import {AuthServiceApi} from "@/shared/services/auth-service.api";
-import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
-export default{
+import {SalesApiService} from "@/sales/services/sales-api.service";
+import {ShopApiService} from "@/shops/services/shop-api.service";
+import {CustomerApiService} from "@/customers/services/customer-api.service";
+import {ProviderApiService} from "@/providers/services/provider-api.service";
+import {ProductApiService} from "@/products/services/product-api.service";
+
+
+export default {
   name: "login.component.vue",
-  components:{
-    languageSwitcherComponent,
-     toolbarComponent
-  },
-  data(){
-    return{
-      visible:false,
-      username:"",
-      password:"",
+  components: {},
+  data() {
+    return {
+      visible: false,
+      username: "Polbored",
+      password: "Pass1234",
       authApi: new AuthServiceApi(),
-      user: {}
-    }
-
+      saleApi: new SalesApiService(),
+      shopApi: new ShopApiService(),
+      customerApi: new CustomerApiService(),
+      providerApi: new ProviderApiService(),
+      productApi: new ProductApiService(),
+    };
   },
-  methods:{
-    onSubmit(){
-      this.login()
-    },
-     login(){
-      const body={
-        username:this.username,
-        password:this.password
+  methods: {
+    async onSubmit() {
+      const body = {
+        username: this.username,
+        password: this.password,
+      };
+      this.response = await this.authApi.logIn(body);
+      this.users = this.response.data;
+
+      for (let i = 0; i < this.users.length; i++) {
+        if (this.users[i].username === this.username && this.users[i].password === this.password) {
+          this.user = this.users[i];
+          // Agrega user al localStorage de manera sincrónica
+          localStorage.setItem('user', JSON.stringify(this.user));
+
+          // Obtiene todos los datos del usuario de manera sincrónica
+          await this.getAllData();
+
+          // Redirige al usuario a la página de inicio
+          this.$router.push('/home');
+        } else {
+          this.visible = true;
+          break;
+        }
       }
-      this.authApi.loginIn(body)
-          .then(response=>{
-            if(response.data[0] != null ){
-              this.user = (response.data[0]);
-              localStorage.setItem('user',JSON.stringify(this.user));
+    },
+    async getAllData() {
+      const promises = [];
 
-               this.$router.push('/home');
-            }
-            else{
-              this.visible=true;
-            }
-          })
-    }
-  }
-}
+      // Agrega todas las operaciones de lectura del localStorage a un array de promesas
+      promises.push(this.saleApi.getSalesById(this.user.idListSales)
+          .then((response) => {
+            this.sales = response.data.sales;
+            localStorage.setItem('sales', JSON.stringify(this.sales));
+          }));
 
+      promises.push(this.shopApi.getById(this.user.idListShops)
+          .then((response) => {
+            this.shops = response.data.shops;
+            localStorage.setItem('shops', JSON.stringify(this.shops));
+          }));
+
+      promises.push(this.providerApi.getProviderById(this.user.idListProviders)
+          .then((response) => {
+            this.providers = response.data.providers;
+            localStorage.setItem('providers', JSON.stringify(this.providers));
+          }));
+
+      promises.push(this.productApi.getProductById(this.user.idListProducts)
+          .then((response) => {
+            this.products = response.data.products;
+            localStorage.setItem('products', JSON.stringify(this.products));
+          }));
+
+      // Espera a que todas las operaciones se completen antes de continuar
+      await Promise.all(promises);
+    },
+  },
+};
 </script>
 
 <style>
-.container{
+.container {
   height: 80vh;
 }
 </style>

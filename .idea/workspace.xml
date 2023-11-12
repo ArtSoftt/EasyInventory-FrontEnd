@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="">
+    <list default="true" id="46362738-10c8-4bdb-8f0d-673e5f5b445d" name="Changes" comment="fix(product): fixed message.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/assets/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/inventory/components/home.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/providers/services/provider-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/providers/services/provider-api.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/login.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/toolbar.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/public/pages/user.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/public/pages/user.component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyInventory/src/shops/services/shop-api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/shops/services/shop-api.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyInventory/src/shops/component/shopping.component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/EasyInventory/src/shops/component/shopping.component.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +18,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Vue Options API Component" />
+        <option value="Vue Composition API Component" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,6 +30,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Leo2426&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e934e010-32fe-47b4-bdbf-17d979fd50d3" />
+        <option name="url" value="https://github.com/ArtSoftt/EasyInventory-FrontEnd" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,28 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/customers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Developer/AplicacionesWeb/EasyInventory-FrontEnd/EasyInventory/src/shared/components&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Leo\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Options API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Options API Component&quot;,
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Developer\AplicacionesWeb\EasyInventory-FrontEnd\EasyInventory\src\shared\components" />
       <recent name="$PROJECT_DIR$/EasyInventory/src/assets" />
     </key>
   </component>
@@ -98,10 +109,130 @@
       <option name="presentableId" value="Default" />
       <updated>1695762487573</updated>
       <workItem from="1695762489101" duration="2953000" />
+      <workItem from="1697214650760" duration="2580000" />
+      <workItem from="1697818132149" duration="9657000" />
+      <workItem from="1698693733717" duration="215000" />
+      <workItem from="1698696071855" duration="1416000" />
+      <workItem from="1698868517163" duration="328000" />
+      <workItem from="1698868869080" duration="1800000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(search): added search component.">
+      <option name="closed" value="true" />
+      <created>1697777721546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697777721546</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(routing): added routes to complemented routes in sidebar.">
+      <option name="closed" value="true" />
+      <created>1697778200816</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778200816</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat(customer): fixed router.">
+      <option name="closed" value="true" />
+      <created>1697778614924</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778614924</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(customer): fixed router.">
+      <option name="closed" value="true" />
+      <created>1697778621311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778621311</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(home-inventory): fixed elements position.">
+      <option name="closed" value="true" />
+      <created>1697778798969</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778798969</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: fixed elemnts.">
+      <option name="closed" value="true" />
+      <created>1697780889601</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697780889601</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat(login): fixed items in local storage.">
+      <option name="closed" value="true" />
+      <created>1697842407584</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697842407584</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat(login): dropped button(hola) in login.">
+      <option name="closed" value="true" />
+      <created>1697842720182</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697842720182</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat(home-inventory): added most selled product.">
+      <option name="closed" value="true" />
+      <created>1697844188549</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697844188549</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat(search): added  default table.">
+      <option name="closed" value="true" />
+      <created>1697845048632</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697845048632</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix(product): fixed message.">
+      <option name="closed" value="true" />
+      <created>1698705043178</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698705043178</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(search): added search component." />
+    <MESSAGE value="feat(routing): added routes to complemented routes in sidebar." />
+    <MESSAGE value="feat(customer): fixed router." />
+    <MESSAGE value="feat(home-inventory): fixed elements position." />
+    <MESSAGE value="feat: fixed elemnts." />
+    <MESSAGE value="feat(login): fixed items in local storage." />
+    <MESSAGE value="feat(login): dropped button(hola) in login." />
+    <MESSAGE value="feat(home-inventory): added most selled product." />
+    <MESSAGE value="fix(products): fixed ids." />
+    <MESSAGE value="feat(search): added  default table." />
+    <MESSAGE value="fix(product): fixed message." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(product): fixed message." />
   </component>
 </project>
