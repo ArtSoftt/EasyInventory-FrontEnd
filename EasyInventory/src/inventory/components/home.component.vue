@@ -10,7 +10,11 @@
            <template #content>
              <pv-card v-for="sale in sales" class="card my-1">
                <template #content>
-                 
+                 <div class="flex">
+                   {{sale.date}}
+                   <span class="example-spacer"></span>
+                   {{sale.totalCost}}
+                 </div>
                </template>
              </pv-card>
            </template>
@@ -22,6 +26,11 @@
              Most Selled Product
            </template>
            <template #content>
+               <pv-card   class="card">
+                 <template #content>
+                   {{product.name}}
+                 </template>
+               </pv-card>
 
            </template>
          </pv-card>
@@ -106,6 +115,7 @@ export default{
       user:{},
       providers:[],
       products:[],
+      product:{},
       bestProduct:[],
       saleApi: new SalesApiService(),
       shopApi: new ShopApiService(),
@@ -118,7 +128,6 @@ export default{
     this.user=(JSON.parse(localStorage.getItem('user')));
     this.sales= this.saleApi.getSalesById(this.user.idListSales)
         .then((response)=>{
-          console.log('HOLA');
           this.sales=response.data.sales;
         })
     this.shops =this.shopApi.getById(this.user.idListShops)
@@ -137,13 +146,34 @@ export default{
         .then((response)=>{
           this.sales=response.data.sales;
         })
+    this.getMostSelledProduct();
   },
   methods:{
+    async getMostSelledProduct(){
+      let max = 5;
+      this.products= await this.productApi.getProductById(this.user.idListProducts);
+      this.products=this.products.data.products;
+      this.products.map(product =>{
+      product.stockfinal=product.stock-product.currentStock;
+      })
+      this.products.forEach(product =>{
+        if(max>product.stockfinal){
+          max=product.stockfinal;
+          this.product=product;
+        }
+      })
+      console.log(this.product);
+    }
+  },
+  computed(){
 
   }
 }
 </script>
 <style>
+.example-spacer{
+  flex: 1 1 auto;
+}
 .card{
   background:white;
 }
