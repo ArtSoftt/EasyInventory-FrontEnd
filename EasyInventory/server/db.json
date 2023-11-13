@@ -83,12 +83,11 @@
         {
           "id": 1,
           "name": "Transistor CP-X234",
-          "type": "Transistor", 
+          "type": "Transistor",
           "unitPrice": 20,
           "realPrice": 10,
           "discount": 15,
           "stock": 10,
-          "currentStock":5,
           "dateOfPurchase": "20/07/2022"
         },
         {
@@ -99,7 +98,6 @@
           "realPrice": 2,
           "discount": 5,
           "stock": 8,
-          "currentStock": 4,
           "dateOfPurchase": "30/06/2023"
         },
         {
@@ -110,7 +108,6 @@
           "realPrice": 10,
           "discount": 10,
           "stock": 5,
-          "currentStock": 3,
           "dateOfPurchase": "25/05/2023"
         }
       ]
