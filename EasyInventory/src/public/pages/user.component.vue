@@ -1,8 +1,9 @@
 <template>
   <div class="body">
+
     <h1 class="flex flex-column justify-content-center align-items-center "> Hi {{ user.name }}</h1>
     <div class="flex flex-column align-items-center justify-content-center">
-      <pv-card class="w-10 bg-primary" >
+      <pv-card class="w-10" >
         <template #content>
           <div class="flex flex-row align-content-center ">
             <div class="flex  justify-content-center align-items-center">
@@ -32,7 +33,7 @@
               <h2><i class="pi pi-credit-card"></i> {{user.subscription}}</h2>
             </div>
             <div class="flex align-items-center">
-              <pv-button severity="" >Change</pv-button>
+              <pv-button>Change</pv-button>
             </div>
           </div>
 
@@ -45,7 +46,7 @@
 
 </template>
 <script>
-import ToolbarComponent from "@/shared/components/toolbar.component.vue";
+import ToolbarComponent from "@/public/pages/toolbar.component.vue";
 export default {
   name:"user-profile",
   components:{ToolbarComponent},

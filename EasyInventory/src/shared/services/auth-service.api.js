@@ -4,10 +4,7 @@ export class AuthServiceApi{
     signUpUser(body){
         return http.post('/users',body);
     }
-    logIn(body){
+    loginIn(body){
         return http.get(`/users?username=${body.username}&password=${body.password}`);
     }
-
-
-
 }

@@ -3,12 +3,13 @@ import App from './App.vue'
 
 
 //Router
-import router from "./router/index.js"
+import router from "./router/index"
 
 //PrimeVue
 import PrimeVue from "primevue/config";
 
 //Theme
+import '../src/assets/theme.css'
 import "primevue/resources/primevue.min.css"
 
 //PrimeVue Material Design Theme
@@ -32,13 +33,6 @@ import Sidebar from "primevue/sidebar";
 import Listbox from "primevue/listbox";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
-import Menu from "primevue/menu";
-import Column from "primevue/column";
-import DataTable from 'primevue/datatable';
-import Toast from "primevue/toast";
-import InputNumber from "primevue/inputnumber";
-import Calendar from "primevue/calendar";
-
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -51,18 +45,12 @@ createApp(App)
     .component('pv-splitter-panel',SplitterPanel)
     .component("pv-sidebar",Sidebar)
     .component("pv-input-text",InputText)
-    .component("pv-data-table",DataTable)
     .component("pv-button",Button)
-    .component("pv-column",Column)
-    .component("pv-toast",Toast)
     .component("pv-toolbar",Toolbar)
-    .component("pv-menu",Menu)
     .component("pv-avatar", Avatar)
     .component("pv-divider",Divider)
     .component("pv-select-button", SelectButton)
     .component("pv-card",Card)
     .component("pv-dialog",Dialog)
     .component("pv-message",Message)
-    .component("pv-input-number",InputNumber)
-    .component("pv-calendar",Calendar)
     .mount('#app')

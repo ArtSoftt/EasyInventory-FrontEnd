@@ -1,5 +1,5 @@
 <template>
-  <pv-select-button v-model="$i18n.locale" :options="languages" class="uppercase "></pv-select-button>
+  <pv-select-button v-model="$i18n.locale" :options="languages" class="bg-primary uppercase "></pv-select-button>
 
 </template>
 <script>
