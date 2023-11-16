@@ -31,7 +31,12 @@ import Dialog from "primevue/dialog";
 import Message from "primevue/message";
 import Sidebar from "primevue/sidebar";
 import Listbox from "primevue/listbox";
+import DataTable from "primevue/datatable";
 import Splitter from "primevue/splitter";
+import Dropdown from "primevue/dropdown";
+import Tag from "primevue/tag";
+import Row from "primevue/row";
+import Column from "primevue/column";
 import SplitterPanel from "primevue/splitterpanel";
 //i18n support
 import i18n from "./i18n"
@@ -40,6 +45,11 @@ createApp(App)
     .use(PrimeVue, {ripple:true})
     .use(ToastService)
     .use(i18n)
+    .component("pv-data-table",DataTable)
+    .component("pv-tag",Tag)
+    .component("pv-column",Column)
+    .component("pv-row",Row)
+    .component("pv-dropdown",Dropdown)
     .component("pv-list-box",Listbox)
     .component('pv-splitter',Splitter)
     .component('pv-splitter-panel',SplitterPanel)

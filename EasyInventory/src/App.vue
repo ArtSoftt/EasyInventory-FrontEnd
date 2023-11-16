@@ -28,7 +28,7 @@
         </pv-splitter-panel>
         <pv-splitter-panel class="flex w-full " :size="70">
 
-          <RouterView/>
+            <RouterView/>
         </pv-splitter-panel>
       </pv-splitter>
     </div>
