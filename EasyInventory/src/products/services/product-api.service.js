@@ -7,4 +7,7 @@ export class ProductApiService{
     {
         return http.get(`/list-products/${id}`);
     }
+    putProductById(id,data){
+        return http.put(`/list-products/${id}`,data);
+    }
 }

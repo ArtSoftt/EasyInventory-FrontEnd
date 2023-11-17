@@ -71,7 +71,6 @@
           "email": "artesco@gmail.com",
           "city": "lima",
           "address": "Av. Los Mangos"
-
         }
       ]
     }
@@ -109,6 +108,26 @@
           "discount": 10,
           "stock": 5,
           "dateOfPurchase": "25/05/2023"
+        },
+        {
+          "id": 4,
+          "name": "ggggg",
+          "type": "gg",
+          "unitPrice": 6,
+          "realPrice": 7,
+          "discount": 62,
+          "stock": 3,
+          "dateOfPurchase": "2023-11-23T05:00:00.000Z"
+        },
+        {
+          "id": 5,
+          "name": "hhhhhh",
+          "type": "hhhhhhhhh",
+          "unitPrice": 3,
+          "realPrice": 7,
+          "discount": 60,
+          "stock": 3,
+          "dateOfPurchase": "2023-11-30T05:00:00.000Z"
         }
       ]
     }

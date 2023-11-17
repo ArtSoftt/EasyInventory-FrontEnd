@@ -4,7 +4,11 @@
     <!-- Products Toolbar Section -->
     <pv-toolbar class="my-6 full-width-toolbar">
       <template #start>
-        <pv-button class="mr-2" icon="pi pi-plus" label="New" severity="success" @click="openNew"/>
+        <router-link to="/new-products">
+          <pv-button class="mr-2" icon="pi pi-plus" label="New" severity="success" />
+        </router-link>
+
+
         <pv-button :disable="!selectedProducts|| selectedProducts.length" icon="pi pi-trash" label="Delete"
                    severity="danger" @click="confirmDeleteSelected"/>
       </template>
@@ -33,11 +37,11 @@
     <pv-column :exportable="false" selectionMode="multiple" style="width: 3rem"/>
     <pv-column :sortable="true" field="id" header="Id" style="min-width:4rem"/>
     <pv-column :sortable="true" field="name" header="Name" style="min-width:9rem"/>
-    <pv-column :sortable="true" field="Category" header="Category" style="min-width:7rem"/>
-    <pv-column :sortable="true" field="Stock" header="Stock" style="min-width:5rem"/>
-    <pv-column :sortable="true" field="Price" header="Price" style="min-width:5rem"/>
-    <pv-column :sortable="true" field="PriceToSell" header="Price to Sell" style="min-width:5rem"/>
-    <pv-column :sortable="true" field="CurrentStock" header="CurrentStock" style="min-width:5rem"/>
+    <pv-column :sortable="true" field="category" header="Category" style="min-width:7rem"/>
+    <pv-column :sortable="true" field="stock" header="Stock" style="min-width:5rem"/>
+    <pv-column :sortable="true" field="unitPrice" header="Price Unit" style="min-width:5rem"/>
+    <pv-column :sortable="true" field="realPrice" header="Price to Sell" style="min-width:5rem"/>
+    <pv-column :sortable="true" field="dateOfPurchase" header="Date Of Purchase" style="min-width:5rem"/>
     <pv-column :exportable="false" style="min-width:8rem">
       <template #body="slotProps">
         <pv-button class="mr-2" icon="pi pi-pencil" outlined rounded @click="editProduct(slotProps.data)"/>
@@ -48,9 +52,10 @@
   </pv-data-table>
 
 <!-- Add/Edit Product Dialog -->
+  <!--
   <product-add-or-edit-dialog :product="product"
                               v-bind:visible="productDialog"
-                              v-on:cancel="onAddOrUpdateItemCancel" v-on:save="onSaveItem"/>
+                              v-on:cancel="onAddOrUpdateItemCancel" v-on:save="onSaveItem"/>-->
 
   <!-- Delete Products Dialog -->
   <product-item-delete-confirmation-dialog
@@ -71,6 +76,7 @@ import ProductItemDeleteConfirmationDialog
   from "@/products/components/product-item-delete-confirmation-dialog.component.vue";
 import ProductSubsetDeleteConfirmationDialog
   from "@/products/components/product-subset-delete-confirmation-dialog.component.vue";
+import {ProductApiService} from "@/products/services/product-api.service";
 
 export default {
   name:"products-component",
@@ -84,11 +90,20 @@ export default {
       products:[],
       selectedProducts:[],
       filters:{},
-
+      productsApi: new ProductApiService()
     }
   },
   created(){
     this.initFilters();
+    this.user = JSON.parse(localStorage.getItem('user'));
+
+    // 2. Obtener los productos asociados al usuario actual usemos su id de listas
+    this.products = this.productsApi.getProductById(this.user.idListProducts)
+        .then((response) => {
+          this.products = response.data.products;
+
+
+        });
 
   },
   methods:{
@@ -96,8 +111,10 @@ export default {
       this.filters={global: {value:null,matchMode:FilterMatchMode.CONTAINS}};
     },
     openNew(){
+
     },
     confirmDeleteSelected(){
+
 
     },
     exportToCsv(){
@@ -110,7 +127,7 @@ export default {
     },
     confirmDeleteTutorial(product){
       this.product=product;
-      this.deleteProductDialog=true;
+
 
     },
     onDeleteSubsetCancel(){

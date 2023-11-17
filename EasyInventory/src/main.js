@@ -38,6 +38,9 @@ import Tag from "primevue/tag";
 import Row from "primevue/row";
 import Column from "primevue/column";
 import SplitterPanel from "primevue/splitterpanel";
+
+import InputNumber from 'primevue/inputnumber';
+import Calendar from 'primevue/calendar';
 //i18n support
 import i18n from "./i18n"
 createApp(App)
@@ -45,6 +48,8 @@ createApp(App)
     .use(PrimeVue, {ripple:true})
     .use(ToastService)
     .use(i18n)
+    .component("pv-calendar",Calendar)
+    .component("pv-input-number",InputNumber)
     .component("pv-data-table",DataTable)
     .component("pv-tag",Tag)
     .component("pv-column",Column)

@@ -11,6 +11,9 @@ const router= createRouter({
         {path:'/home',name:'dashboard',component:()=>import('../inventory/components/home.component.vue')},
         {path:'/products', name:'table', component:()=>import('../products/pages/products.component.vue')},
          {path:'/customers', name:'customers', component:()=>import('../customers/components/register-customer.component.vue')},
+
+        {path:"/new-products",name:"newProducts", component:()=>import('../products/components/product-item-add-or-edit-dialog.component.vue')}
+
     ]
 
 })
