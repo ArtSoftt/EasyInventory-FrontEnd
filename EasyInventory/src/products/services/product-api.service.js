@@ -10,4 +10,5 @@ export class ProductApiService{
     putProductById(id,data){
         return http.put(`/list-products/${id}`,data);
     }
+
 }

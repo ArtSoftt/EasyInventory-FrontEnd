@@ -1,10 +1,12 @@
 <template>
+  <pv-dialog>
 
+  </pv-dialog>
 </template>
 
 <script>
 export default{
-  name:"product-subset-delete-confirmation-dialog",
+  name:"product-edit-dialog",
 }
 </script>
 

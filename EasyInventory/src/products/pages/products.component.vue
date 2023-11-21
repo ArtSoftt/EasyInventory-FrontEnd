@@ -63,19 +63,19 @@
     v-on:cancel="onDeleteItemCancel" v-on:confirm="onDeleteItemConfirm"/>-->
 
   <!-- Delete Selected Products Confirmation Dialog -->
-  <product-subset-delete-confirmation-dialog
-    :items="selectedProducts" v-bind:visible="deleteProductsDialog"
+  <product-edit-dialog
+    :items="selectedProducts" v-bind:visible="productDialog"
     v-on:cancel="onDeleteSubsetCancel" v-on:confirm="onDeleteSubsetConfirm"/>
 </div>
 </template>
 <script>
 
 import {FilterMatchMode} from "primevue/api";
-import ProductAddOrEditDialog from "@/products/components/product-item-add-or-edit-dialog.component.vue";
+import ProductAddOrEditDialog from "@/products/pages/product-item-add.component.vue";
 import ProductItemDeleteConfirmationDialog
   from "@/products/components/product-item-delete-confirmation-dialog.component.vue";
 import ProductSubsetDeleteConfirmationDialog
-  from "@/products/components/product-subset-delete-confirmation-dialog.component.vue";
+  from "@/products/components/product-edit-dialog.component.vue";
 import {ProductApiService} from "@/products/services/product-api.service";
 
 export default {
@@ -115,7 +115,12 @@ export default {
 
     },
     confirmDeleteSelected(){
-
+      this.listproducts.products = []
+      this.productsApi.putProductById(this.user.idListProducts,this.listproducts)
+          .then((response) => {
+            console.log("Lista de Productos eliminada");
+            console.log(this.listproducts);
+          })
 
     },
     exportToCsv(){

@@ -12,7 +12,7 @@ const router= createRouter({
         {path:'/products', name:'table', component:()=>import('../products/pages/products.component.vue')},
          {path:'/customers', name:'customers', component:()=>import('../customers/components/register-customer.component.vue')},
 
-        {path:"/new-products",name:"newProducts", component:()=>import('../products/components/product-item-add-or-edit-dialog.component.vue')}
+        {path:"/new-products",name:"newProducts", component:()=>import('../products/pages/product-item-add.component.vue')}
 
     ]
 
