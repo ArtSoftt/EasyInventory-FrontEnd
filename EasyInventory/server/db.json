@@ -111,23 +111,13 @@
         },
         {
           "id": 4,
-          "name": "ggggg",
-          "type": "gg",
-          "unitPrice": 6,
-          "realPrice": 7,
-          "discount": 62,
-          "stock": 3,
-          "dateOfPurchase": "2023-11-23T05:00:00.000Z"
-        },
-        {
-          "id": 5,
-          "name": "hhhhhh",
-          "type": "hhhhhhhhh",
+          "name": "Brayan Smith morales Quispe",
+          "type": "óió",
           "unitPrice": 3,
-          "realPrice": 7,
-          "discount": 60,
-          "stock": 3,
-          "dateOfPurchase": "2023-11-30T05:00:00.000Z"
+          "realPrice": 3,
+          "discount": 0,
+          "stock": 4,
+          "dateOfPurchase": "2023-11-14T05:00:00.000Z"
         }
       ]
     }

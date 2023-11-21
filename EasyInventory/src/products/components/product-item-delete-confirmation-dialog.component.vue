@@ -1,5 +1,8 @@
 <template>
+  <h1>dfsdsfsd</h1>
+  <pv-dialog>
 
+  </pv-dialog>
 </template>
 
 <script>

@@ -20,7 +20,7 @@
   <!-- Products Table Container -->
   <pv-data-table ref="dt" v-model:selection="selectedProducts"
                 :filters="filters" :paginatpr="true" :rows="10" :rows-per-page-options="[5,10,25]"
-  :value="products"
+  :value="listproducts.products"
   current-page-report-template="Showing {first} to {last} of {totalResource} products"
   data-key="id"
   paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
@@ -46,7 +46,7 @@
       <template #body="slotProps">
         <pv-button class="mr-2" icon="pi pi-pencil" outlined rounded @click="editProduct(slotProps.data)"/>
         <pv-button icon="pi pi-trash" outlined rounded severity="danger"
-                   @click="confirmDeleteTutorial(slotProps.data)"/>
+                   @click="confirmDeleteProduct(slotProps.data)"/>
       </template>
     </pv-column>
   </pv-data-table>
@@ -57,10 +57,10 @@
                               v-bind:visible="productDialog"
                               v-on:cancel="onAddOrUpdateItemCancel" v-on:save="onSaveItem"/>-->
 
-  <!-- Delete Products Dialog -->
+  <!-- Delete Products Dialog
   <product-item-delete-confirmation-dialog
     :item="product" v-bind:visible="deleteProductDialog"
-    v-on:cancel="onDeleteItemCancel" v-on:confirm="onDeleteItemConfirm"/>
+    v-on:cancel="onDeleteItemCancel" v-on:confirm="onDeleteItemConfirm"/>-->
 
   <!-- Delete Selected Products Confirmation Dialog -->
   <product-subset-delete-confirmation-dialog
@@ -87,7 +87,8 @@ export default {
       productDialog:false,
       deleteProductDialog:false,
       product:{},
-      products:[],
+
+      listproducts:{},
       selectedProducts:[],
       filters:{},
       productsApi: new ProductApiService()
@@ -98,9 +99,9 @@ export default {
     this.user = JSON.parse(localStorage.getItem('user'));
 
     // 2. Obtener los productos asociados al usuario actual usemos su id de listas
-    this.products = this.productsApi.getProductById(this.user.idListProducts)
+    this.listproducts = this.productsApi.getProductById(this.user.idListProducts)
         .then((response) => {
-          this.products = response.data.products;
+          this.listproducts = response.data;
 
 
         });
@@ -125,9 +126,24 @@ export default {
       this.productDialog=true;
 
     },
-    confirmDeleteTutorial(product){
-      this.product=product;
+    confirmDeleteProduct(product){
+      this.deleteProductDialog=true;
 
+      //Verifica si el producto esta en el arreglo d productos de la listadeproductos del ususario
+      if(this.listproducts.products.includes(product)){
+        this.listproducts.products.splice(this.listproducts.products.indexOf(product),1);
+      } else {
+        //Si no hay un producto en el arreglo de productos del usuario
+        alert("El producto no existe en la lista de productos del usuario");
+        return;
+      }
+
+      this.productsApi.putProductById(this.user.idListProducts,this.listproducts)
+          .then((response) => {
+            console.log("Producto Eliminado");
+            console.log(this.listproducts);
+          })
+      this.product=product;
 
     },
     onDeleteSubsetCancel(){
