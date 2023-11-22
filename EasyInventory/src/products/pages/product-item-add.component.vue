@@ -23,13 +23,9 @@
         <div class="formgrid grid">
           <div class="field col">
             <label for="name_product">Type</label><br>
-            <pv-input-text  v-model="product.type"  />
+            <pv-input-text  v-model="product.category"  />
           </div>
 
-          <div class="field col">
-            <label for="name_product">Date Of Purchase</label><br>
-            <pv-calendar v-model="product.dateOfPurchase" showIcon />
-          </div>
         </div>
         <!--Tercera fila-->
         <div class="formgrid grid">
@@ -52,7 +48,7 @@
 
           <div class="field col">
             <label for="name_product">Stock</label><br>
-            <pv-input-number id="id_sales" v-model="product.stock" inputId="stacked-buttons" showButtons :min="0"  />
+            <pv-input-number id="id_sales" v-model="product.stock"   inputId="stacked-buttons" showButtons :min="0"  />
           </div>
         </div>
 
@@ -73,7 +69,6 @@
 </template>
 
 <script>
-import {User} from "@/inventory/model/user.entity";
 import {ProductApiService} from "@/products/services/product-api.service";
 import {Product} from "@/products/model/products-entity";
 
@@ -87,11 +82,7 @@ export default{
   data(){
     return{
       submitted:false,
-
-
       product: new Product(),
-      Products: []=[],
-      user:{},
       productsApi: new ProductApiService()
     }
 
@@ -109,28 +100,23 @@ export default{
     },
     
     summitForm() {
-      console.log("Producto capturado: ",this.product);
-      this.Products.products.push(this.product);
-      this.productsApi.putProductById(this.user.idListProducts,this.Products)
+      this.product.currentStock = this.product.stock;
+      this.product.userId = parseInt(localStorage.getItem('profileId'));
+
+       this.productsApi.postProduct(this.product)
           .then((response) => {
             console.log("Nuevo Producto Registrado");
-            console.log(this.Products);
+            console.log(response.data);
+            this.$emit('productAdded',response.data);
           })
+          .catch((error=>{
+            console.error('Error ',error.message);
+          }))
 
     }
 
   },
   created() {
-    // 1. Obtener el usuario actual del localStorage y asignarlo a la propiedad 'user'
-    this.user = JSON.parse(localStorage.getItem('user'));
-
-    // 2. Obtener los productos asociados al usuario actual usemos su id de listas
-    this.Products = this.productsApi.getProductById(this.user.idListProducts)
-        .then((response) => {
-          this.Products = response.data;
-          this.product.id = this.Products.products.length+1
-          console.log(this.Products);
-        });
 
 
 

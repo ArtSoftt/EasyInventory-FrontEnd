@@ -20,7 +20,7 @@
   <!-- Products Table Container -->
   <pv-data-table ref="dt" v-model:selection="selectedProducts"
                 :filters="filters" :paginatpr="true" :rows="10" :rows-per-page-options="[5,10,25]"
-  :value="listproducts.products"
+  :value="products"
   current-page-report-template="Showing {first} to {last} of {totalResource} products"
   data-key="id"
   paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
@@ -39,9 +39,10 @@
     <pv-column :sortable="true" field="name" header="Name" style="min-width:9rem"/>
     <pv-column :sortable="true" field="category" header="Category" style="min-width:7rem"/>
     <pv-column :sortable="true" field="stock" header="Stock" style="min-width:5rem"/>
+    <pv-column :sortable="true" field="discount" header="Discount" style="min-width:5rem"/>
     <pv-column :sortable="true" field="unitPrice" header="Price Unit" style="min-width:5rem"/>
     <pv-column :sortable="true" field="realPrice" header="Price to Sell" style="min-width:5rem"/>
-    <pv-column :sortable="true" field="dateOfPurchase" header="Date Of Purchase" style="min-width:5rem"/>
+    <pv-column :sortable="true" field="currentStock" header="Current Stock" style="min-width:5rem"/>
     <pv-column :exportable="false" style="min-width:8rem">
       <template #body="slotProps">
         <pv-button class="mr-2" icon="pi pi-pencil" outlined rounded @click="editProduct(slotProps.data)"/>
@@ -51,6 +52,12 @@
     </pv-column>
   </pv-data-table>
 
+
+  <product-edit-dialog-component
+    :visible="editDialogVisible"
+    :editedProduct="editedProduct"
+    @saveEdit="saveProductEdit"
+    @cancelEdit="cancelProductEdit"></product-edit-dialog-component>
 <!-- Add/Edit Product Dialog -->
   <!--
   <product-add-or-edit-dialog :product="product"
@@ -63,14 +70,12 @@
     v-on:cancel="onDeleteItemCancel" v-on:confirm="onDeleteItemConfirm"/>-->
 
   <!-- Delete Selected Products Confirmation Dialog -->
-  <product-edit-dialog
-    :items="selectedProducts" v-bind:visible="productDialog"
-    v-on:cancel="onDeleteSubsetCancel" v-on:confirm="onDeleteSubsetConfirm"/>
 </div>
 </template>
 <script>
 
 import {FilterMatchMode} from "primevue/api";
+import ProductEditDialogComponent from "@/products/components/product-edit-dialog.component.vue";
 import ProductAddOrEditDialog from "@/products/pages/product-item-add.component.vue";
 import ProductItemDeleteConfirmationDialog
   from "@/products/components/product-item-delete-confirmation-dialog.component.vue";
@@ -80,15 +85,16 @@ import {ProductApiService} from "@/products/services/product-api.service";
 
 export default {
   name:"products-component",
-  components:{ProductSubsetDeleteConfirmationDialog, ProductItemDeleteConfirmationDialog, ProductAddOrEditDialog},
+  components:{ProductSubsetDeleteConfirmationDialog, ProductItemDeleteConfirmationDialog, ProductAddOrEditDialog,ProductEditDialogComponent},
   data(){
     return{
       deleteProductsDialog:false,
-      productDialog:false,
+      editDialogVisible:false,
+      editedProduct:null,
       deleteProductDialog:false,
       product:{},
-
-      listproducts:{},
+      deleteProducts:[],
+      products:[],
       selectedProducts:[],
       filters:{},
       productsApi: new ProductApiService()
@@ -96,30 +102,35 @@ export default {
   },
   created(){
     this.initFilters();
-    this.user = JSON.parse(localStorage.getItem('user'));
 
     // 2. Obtener los productos asociados al usuario actual usemos su id de listas
-    this.listproducts = this.productsApi.getProductById(this.user.idListProducts)
+
+    this.productsApi.getProductById(parseInt(localStorage.getItem('profileId')))
         .then((response) => {
-          this.listproducts = response.data;
-
-
-        });
+          console.log(response);
+          this.products=response.data;
+        })
+        .catch((error=>{
+          console.error('Error' ,error.message);
+        }))
 
   },
   methods:{
     initFilters(){
       this.filters={global: {value:null,matchMode:FilterMatchMode.CONTAINS}};
     },
-    openNew(){
-
+    saveProductEdit(editedProduct){
+      console.log("Producto editado: ",editedProduct);
+      this.editDialogVisible=false;
+    },
+    cancelProductEdit(){
+      this.editDialogVisible=false;
     },
     confirmDeleteSelected(){
-      this.listproducts.products = []
-      this.productsApi.putProductById(this.user.idListProducts,this.listproducts)
+      this.productsApi.putProductById(parseInt(localStorage.getItem('profileId')),this.product)
           .then((response) => {
             console.log("Lista de Productos eliminada");
-            console.log(this.listproducts);
+            console.log(this.products);
           })
 
     },
@@ -133,22 +144,11 @@ export default {
     },
     confirmDeleteProduct(product){
       this.deleteProductDialog=true;
-
-      //Verifica si el producto esta en el arreglo d productos de la listadeproductos del ususario
-      if(this.listproducts.products.includes(product)){
-        this.listproducts.products.splice(this.listproducts.products.indexOf(product),1);
-      } else {
-        //Si no hay un producto en el arreglo de productos del usuario
-        alert("El producto no existe en la lista de productos del usuario");
-        return;
-      }
-
-      this.productsApi.putProductById(this.user.idListProducts,this.listproducts)
+      this.productsApi.deleteProduct(parseInt(product.id))
           .then((response) => {
             console.log("Producto Eliminado");
-            console.log(this.listproducts);
+            this.products=this.products.filter(p=>p.id!==product.id);
           })
-      this.product=product;
 
     },
     onDeleteSubsetCancel(){

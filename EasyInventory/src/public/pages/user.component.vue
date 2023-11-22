@@ -1,7 +1,7 @@
 <template>
   <div class="body">
 
-    <h1 class="flex flex-column justify-content-center align-items-center "> Hi {{ user.name }}</h1>
+    <h1 class="flex flex-column justify-content-center align-items-center "> Hi {{ user.firstName }} {{user.lastName}}</h1>
     <div class="flex flex-column align-items-center justify-content-center">
       <pv-card class="w-10" >
         <template #content>
@@ -12,9 +12,11 @@
 
               <div class="flex flex-column">
                 <h1 id="user-name">{{ user.name }}</h1>
-                <p><i class="pi pi-id-card"></i> {{ user.birthday }}</p>
-                <p><i class="pi pi-phone"></i> {{ user.phone }}</p>
-                <p><i class="pi pi-envelope"></i> {{ user.email }}</p>
+                <p>Company Name: {{ user.companyName }}</p>
+                <p> Street: {{ user.street }}</p>
+                <p> City: {{ user.city }}</p>
+                <p>State:  {{ user.state }}</p>
+                <p>Email: {{ user.email }}</p>
               </div>
             </div>
 
@@ -47,16 +49,29 @@
 </template>
 <script>
 import ToolbarComponent from "@/public/pages/toolbar.component.vue";
+import {ProfileApiService} from "@/public/services/profile-api.service";
+
 export default {
   name:"user-profile",
   components:{ToolbarComponent},
   data(){
     return{
       user:{},
+      profileApi: new ProfileApiService()
     }
   },
   created() {
-    this.user =JSON.parse(localStorage.getItem('user'));
+    this.fetchUser();
+  },
+  methods:{
+    fetchUser(){
+       this.profileApi.getProfileById(parseInt(localStorage.getItem('profileId')),localStorage.getItem('token'))
+          .then(response=>{
+            this.user=response.data;
+            console.log(this.user);
+          })
+
+    }
   }
 }
 </script>

@@ -7,7 +7,7 @@
             <pv-list-box :options="items" optionLabel="name" class="mt-6 container "  >
               <template #option="slotProps">
                 <div class="mt-3">
-                  <router-link  :to="`/${slotProps.option.to}`" :key="slotProps.option.label">
+                  <router-link  :to="`${slotProps.option.to}`" :key="slotProps.option.label">
                     <div v-if="slotProps.option.label==='Log out'" class="flex  justify-content-center" >
                       <pv-button class="w-9 flex  h-2rem  justify-content-center mt-8">
                         <i class="pi pi-sign-out mr-4 "></i>
@@ -50,14 +50,14 @@ export default{
   data(){
     return{
       items:[
-        {label:"Home", icon:"pi pi-home",to:"home"},
-        {label:"Search", icon:"pi pi-search",to:"search"},
-        {label:"Customer", icon:"pi pi-user",to:"customer"},
-        {label:"Provider", icon:"pi pi-users",to:"providers"},
-        {label:"Products", icon:"pi pi-user",to:"products"},
-        {label:"Shopping", icon:"pi pi-shopping-cart",to:"shop"},
-        {label:"Sales", icon:"pi pi-money-bill",to:"sales"},
-        {label:"Log out", icon:"pi pi-sales",to:""}
+        {label:"Home", icon:"pi pi-home",to:"/home"},
+        {label:"Search", icon:"pi pi-search",to:"/search"},
+        {label:"Customer", icon:"pi pi-user",to:"/customer"},
+        {label:"Provider", icon:"pi pi-users",to:"/providers"},
+        {label:"Products", icon:"pi pi-user",to:"/products"},
+        {label:"Shopping", icon:"pi pi-shopping-cart",to:"/shop"},
+        {label:"Sales", icon:"pi pi-money-bill",to:"/sales"},
+        {label:"Log out", icon:"pi pi-sales",to:"/"}
       ]
     }
   },
