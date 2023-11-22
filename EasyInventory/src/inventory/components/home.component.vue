@@ -1,18 +1,96 @@
 <template>
-  <toolbar-component />
-  <pv-list-box>
+  <pv-splitter layout="vertical">
+    <pv-splitter-panel >
+     <div class="flex">
+       <div class="col-6">
+         <pv-card>
+           <template #title>
+             Last sales
+           </template>
+           <template #content>
+             <pv-card v-for="sale in sales" class="card my-1">
+               <template #content>
+                 
+               </template>
+             </pv-card>
+           </template>
+         </pv-card>
+       </div>
+       <div class="col-6">
+         <pv-card>
+           <template #title>
+             Most Selled Product
+           </template>
+           <template #content>
 
-  </pv-list-box>
+           </template>
+         </pv-card>
+       </div>
+     </div>
+    </pv-splitter-panel>
+    <pv-splitter-panel >
+        <div class="flex">
+          <div class="col-4">
+            <pv-card >
+              <template #title>
+                Last Shoppings
+              </template>
+              <template #content>
+                    <pv-card v-for="shop in shops" class="card my-2 ">
+                      <template #content>
+                        <div class="flex">
+                          {{shop.title}}
+                          <span class="example-spacer"></span>
+                          {{shop.totalPrice}}
+                        </div>
+                      </template>
+                    </pv-card>
+              </template>
+            </pv-card>
+          </div>
+          <div class="col-4 ">
+            <pv-card class="main-card">
+              <template #title>
+                Providers
+              </template>
+              <template #content>
+                <div class="content">
 
+                  <pv-card v-for="provider in providers" class="card my-1 ">
+                    <template #content>
+                      {{provider.name}}
+                    </template>
+                  </pv-card>
+                </div>
 
+              </template>
+            </pv-card>
+          </div>
+          <div class="col-4">
+            <pv-card>
+              <template #title>
+                Products
+              </template>
+              <template #content>
+                <pv-card v-for="product in products" class="card my-1">
+                  <template #content>
+                    <div class="flex">
+                      {{product.name}}
+                      <span class="example-spacer"></span>
+                      {{product.stock}}
+                    </div>
+                  </template>
+                </pv-card>
+              </template>
+            </pv-card>
+          </div>
+        </div>
+    </pv-splitter-panel>
+  </pv-splitter>
 </template>
 
 <script>
 import ToolbarComponent from "@/public/pages/toolbar.component.vue";
-import {CustomerApiService} from "@/customers/services/customer-api.service";
-import {ProviderApiService} from "@/providers/services/provider-api.service";
-import {ProductApiService} from "@/products/services/product-api.service";
-import {SalesApiService} from "@/sales/services/sales-api.service";
 export default{
   name:"home-component",
   components:{ ToolbarComponent},
@@ -24,23 +102,18 @@ export default{
       providers:[],
       products:[],
       bestProduct:[],
-      salesApi: new SalesApiService(),
-      customerApi: new CustomerApiService(),
-      providerApi: new ProviderApiService(),
-      productApi: new ProductApiService()
     }
   },
-   async created() {
-    this.user=(JSON.parse(localStorage.getItem('user')));
-    console.log(this.user.id);
-    this.sales= this.salesApi.getSalesById(this.user.id)
-        .then((response)=>{
-          this.sales=response.data;
-          console.log(this.sales);
-        })
+  created() {
+
   },
   methods:{
 
   }
 }
 </script>
+<style>
+.card{
+  background:white;
+}
+</style>

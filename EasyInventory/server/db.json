@@ -10,7 +10,7 @@
       "password": "Pass1234",
       "email": "paul@gmail.com",
       "birthday": "25/11/2002",
-      "subscription": "free",
+      "subscription": "Free",
       "idListProducts": 1,
       "idListSales": 1,
       "idListCustomers": 1,
@@ -53,6 +53,24 @@
           "email": "shangin@gmail.com",
           "city": "lima",
           "address": "Av. Los Jardines"
+        },
+        {
+          "id": 2,
+          "name": "TEKNO",
+          "phone": 987543172,
+          "ruc": 202020202230,
+          "email": "tekkno@gmail.com",
+          "city": "lima",
+          "address": "Av. Los Eucaliptos"
+        },
+        {
+          "id": 3,
+          "name": "ARTESCO",
+          "phone": 987543172,
+          "ruc": 202020202230,
+          "email": "artesco@gmail.com",
+          "city": "lima",
+          "address": "Av. Los Mangos"
         }
       ]
     }
@@ -66,6 +84,8 @@
           "name": "Transistor CP-X234",
           "type": "Transistor",
           "unitPrice": 20,
+          "realPrice": 10,
+          "discount": 15,
           "stock": 10,
           "dateOfPurchase": "20/07/2022"
         },
@@ -74,6 +94,8 @@
           "name": "Capacitor PX-X234",
           "type": "Capacitor",
           "unitPrice": 5,
+          "realPrice": 2,
+          "discount": 5,
           "stock": 8,
           "dateOfPurchase": "30/06/2023"
         },
@@ -82,8 +104,20 @@
           "name": "Resistance CP-X234",
           "type": "Resistance",
           "unitPrice": 15,
+          "realPrice": 10,
+          "discount": 10,
           "stock": 5,
           "dateOfPurchase": "25/05/2023"
+        },
+        {
+          "id": 4,
+          "name": "Brayan Smith morales Quispe",
+          "type": "óió",
+          "unitPrice": 3,
+          "realPrice": 3,
+          "discount": 0,
+          "stock": 4,
+          "dateOfPurchase": "2023-11-14T05:00:00.000Z"
         }
       ]
     }
@@ -95,20 +129,16 @@
         {
           "id": 1,
           "customer-id": 1,
-          "Date": "25/09/2023",
-          "Total Cost": 70,
+          "date": "25/09/2023",
+          "totalCost": 70,
           "listOfProducts": [
             {
               "id": 1,
-              "quantity": 5,
-              "Discount": 50,
-              "totalCost": 50
+              "quantity": 5
             },
             {
               "id": 2,
-              "quantity": 5,
-              "Discount": 5,
-              "totalCost": 20
+              "quantity": 5
             }
           ]
         }
@@ -121,10 +151,18 @@
       "shops": [
         {
           "id": 1,
-          "amount": 20,
-          "idProduct": 2,
-          "unitPrice": 2.5,
-          "idProvider": 1
+          "title": "Compra Agosto ",
+          "totalPrice": 100,
+          "date": "20/11/2020",
+          "shoppedProducts": [
+            {
+              "idProduct": 1,
+              "idProvider": 1,
+              "quantity": 20,
+              "realPrice": 5,
+              "cost": 100
+            }
+          ]
         }
       ]
     }

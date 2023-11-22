@@ -10,9 +10,9 @@
       <language-switcher-component></language-switcher-component>
     </template>
   </pv-toolbar>
-<div class="justify-content-center flex mt-8 container">
+<div class="justify-content-center flex w-fit mt-8 ml-8 container">
 
-  <pv-card class="w-5 h-9 flex color-white align-content-center">
+  <pv-card class="w-8 h-9 flex color-white align-content-center">
     <template #title>Create your account</template>
     <template #content>
       <form class="form">
@@ -23,7 +23,7 @@
             <div class="form-group-inline">
               <div class="form-group">
                 <label for="firstName">First Name</label>
-                <pv-input-text type="text" class=" border-color-700 border-solid p-3 border-round w-full" id="firstname" v-model="firstname" required/>
+                <pv-input-text type="text" class=" border-color-700 border-solid p-3 border-round w-full" id="firstName" v-model="firstname" required/>
               </div>
             </div>
 
@@ -57,19 +57,44 @@
           <div class="field col">
             <div class="form-group-inline">
               <div class="form-group">
-                <label for="birthday">Birthday</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="birthday" v-model="birthday" required/>
+                <label for="companyName">Company Name</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="companyName" v-model="companyName" required/>
               </div>
             </div>
           </div>
           <div class="field col">
             <div class="form-group-inline">
               <div class="form-group">
-                <label for="birthday">Company Name</label>
-                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="companyName" v-model="companyName" required/>
+                <label for="street">Street</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="street" v-model="street" required/>
               </div>
             </div>
           </div>
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="city">City</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="city" v-model="city" required/>
+              </div>
+            </div>
+          </div>
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="state">State</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="state" v-model="state" required/>
+              </div>
+            </div>
+          </div>
+          <div class="field col">
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="zipCode">Zip Code</label>
+                <pv-input-text type="text" class=" border-solid p-3 border-round w-full" id="zipCode" v-model="zipCode" required/>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="form grid grid">
@@ -82,14 +107,6 @@
             </div>
           </div>
 
-          <div class="field col">
-            <div class="form-group-inline">
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <pv-input-text type="text" class="border-solid p-3 border-round w-full" id="phone" v-model="phone" required/>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="form grid grid">
@@ -135,12 +152,8 @@
 </template>
 <script>
 import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
-import {CustomerApiService} from "@/customers/services/customer-api.service";
-import {ProviderApiService} from "@/providers/services/provider-api.service";
-import {ProductApiService} from "@/products/services/product-api.service";
-import {SalesApiService} from "@/sales/services/sales-api.service";
-import {ShopApiService} from "@/shops/services/shop-api.service";
-import {AuthServiceApi} from "@/shared/services/auth-service.api";
+import {ProfileApiService} from "@/public/services/profile-api.service";
+import {AuthApiService} from "@/public/services/auth-api.service";
 
 export default{
   name:'sign-up',
@@ -151,18 +164,17 @@ export default{
       firstname:"",
       password:"",
       lastname:"",
+      userFail: false,
       email:"",
-      birthday:"",
-      phone:"",
       repeatPassword:"",
       companyName:"",
-      apiCustomer:new CustomerApiService(),
-      apiProduct:new ProductApiService(),
-      apiProvider:new ProviderApiService(),
-      apiShop: new ShopApiService(),
-      apiSale: new SalesApiService(),
-      authApi: new AuthServiceApi(),
-
+      street:"",
+      city:"",
+      state:"",
+      zipCode:"",
+      userCreated:false,
+      authApi: new AuthApiService(),
+      profileApi: new ProfileApiService()
     }
   },
   computed:{
@@ -171,12 +183,14 @@ export default{
           this.username===''||
           this.firstname===''||
           this.lastname===''||
-          this.birthday===''||
           this.email===''||
-          this.phone===''||
           this.password===''||
           this.repeatPassword===''||
-          this.companyName===''
+          this.companyName===''||
+          this.street===''||
+              this.city===''||
+              this.state===''||
+              this.zipCode===''
       );
     },
     passwordMismatch() {
@@ -192,47 +206,44 @@ export default{
     },
     async signUp() {
 
-      let product = {
-        id: 0,
-        products: []
-      }
-      let customer = {
-        id: 0,
-        customers: []
-      }
-      let provider = {
-        id: 0,
-        customer: []
-      }
-      let sale = {
-        id: 0,
-        sales: []
-      }
-      let shop = {
-        id: 0,
-        sales: []
-      }
-
-      const userdata = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        genre: this.genre,
-        birthday: this.birthday,
-        company: this.companyName,
+      let profileData = {
+        firstName: this.firstname,
+        lastName: this.lastname,
         email: this.email,
-        phone: this.phone,
-        username: this.username,
-        password: this.password,
-        idListCustomers: (await this.apiCustomer.create(customer)).data.id,
-        idListProviders: (await this.apiProvider.create(provider)).data.id,
-        idListSales: (await this.apiSale.create(sale)).data.id,
-        idListShops: (await this.apiShop.create(shop)).data.id,
-        idListProducts: (await this.apiProduct.create(product)).data.id
+        street:this.street,
+        city:this.city,
+        state:this.state,
+        zipCode:this.zipCode,
+        companyName: this.companyName,
       };
-      this.authApi.signUpUser(userdata)
-          .then((response) => {
-            console.log(response.data);
+      console.log(profileData);
+       await this.profileApi.createProfile(profileData)
+          .then((response=>{
+            console.log(response);
+            localStorage.setItem('profileId',response.data.id);
+          }))
+          .catch((error)=>{
+            console.error('Error ',error.message);
           })
+
+      let userData={
+        username : this.username,
+        password:this.password,
+        profileId:parseInt(localStorage.getItem('profileId'))
+      };
+       await this.authApi.signUp(userData)
+           .then((response=>{
+             console.log(response)
+           }))
+           .catch((error=>{
+             console.error('Error ',error.message);
+           }))
+
+
+
+
+
+
 
     },
 

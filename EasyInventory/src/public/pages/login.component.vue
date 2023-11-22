@@ -10,7 +10,7 @@
       <language-switcher-component></language-switcher-component>
     </template>
   </pv-toolbar>
-  <div class="flex justify-content-center container mt-7 ">
+  <div class="flex justify-content-center container mt-7 w-full ">
     <pv-card class=" justify-content-start border-round-3xl w-26rem align-items-center  h-fit ">
       <template #title >
         <div class="pl-5 pt-5 pb-3 text-4xl">
@@ -74,8 +74,7 @@
 
 <script>
 import toolbarComponent from "@/public/pages/toolbar.component.vue";
-import {AuthServiceApi} from "@/shared/services/auth-service.api";
-import {User} from "@/inventory/model/user.entity.js"
+import {AuthApiService} from "@/public/services/auth-api.service";
 import languageSwitcherComponent from "@/public/pages/language-switcher.component.vue";
 export default{
   name: "login.component.vue",
@@ -88,10 +87,13 @@ export default{
       visible:false,
       username:"",
       password:"",
-      authApi: new AuthServiceApi(),
+      authApi: new AuthApiService(),
       user: {}
     }
 
+  },
+  created() {
+    localStorage.clear();
   },
   methods:{
     onSubmit(){
@@ -102,17 +104,15 @@ export default{
         username:this.username,
         password:this.password
       }
-      this.authApi.loginIn(body)
-          .then(response=>{
-            if(response.data[0] != null ){
-              this.user = (response.data[0]);
-              localStorage.setItem('user',JSON.stringify(this.user));
-
-               this.$router.push('/home');
-            }
-            else{
-              this.visible=true;
-            }
+      this.authApi.login(body)
+          .then((response)=>{
+            console.log('Respuesta existosa: ',response);
+            localStorage.setItem('token',response.data.token);
+            localStorage.setItem('profileId',response.data.profileId);
+            this.$router.push('/home');
+          })
+          .catch((error)=>{
+            console.error('Error: ', error.message);
           })
     }
   }
