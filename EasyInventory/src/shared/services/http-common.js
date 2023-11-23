@@ -2,7 +2,7 @@
 import axios from "axios";
 const http =axios.create({
 
-    baseURL:'https://localhost:7109/api/v1',
+    baseURL:'https://webapieasyinventory.azurewebsites.net/api/v1',
     headers:{
         'Content-type': 'application/json',
     }
